@@ -9,7 +9,7 @@
 <body ng-app="app">
     <input type="text" id="barra-ricerca" onkeyup="ricerca()" placeholder="Cerca">
     <ul id="elenco">
-        <li ng-repeat="bar in bars"><a onclick="apriPagina()"></a></li>
+        <li ng-repeat="bar in bars"><a onclick="apriPagina()">{{bar}}</a></li>
     </ul>
 </body>
 <script src="script.js"></script>
