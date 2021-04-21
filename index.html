@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Seats</title>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li>ciao</li>
-            <li>bella</li>
-        </ul>
-    </nav>
+<body ng-app="app">
+    <input type="text" id="barra-ricerca" onkeyup="ricerca()" placeholder="Cerca">
+    <ul id="elenco">
+        <li ng-repeat="bar in bars"><a onclick="apriPagina()"></a></li>
+    </ul>
 </body>
+<script src="script.js"></script>
 </html>
