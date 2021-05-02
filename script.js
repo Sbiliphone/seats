@@ -1,9 +1,10 @@
 var arrayBar = new Array();
 var app = angular.module('app', []);
+console.log("ciao");
 
 app.controller('ctrl1', function ($scope){
     $.get(
-        './DatabaseConnection.php',
+        '../src/controller/updateBar.php',
         function( data ) {
             arrayBar = JSON.parse(data);
             $scope.$apply(function() {

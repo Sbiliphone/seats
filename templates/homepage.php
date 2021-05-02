@@ -6,30 +6,19 @@ require('../templates/header.php');
 require('../templates/menu.php');
 ?>
 
-<div style="display: none">
-
-<?php
-global $db;
-$sql = "SELECT * FROM immagine ;";
-$rs = $db->execute($sql);
-
-?>
-</div>
-    <div style="width: 1800px; height: 800px;overflow: auto;">
-        <?php
-        foreach ($rs as $result) {
-            if($result["utente"] === $_SESSION['username'] || $_SESSION['Admin'] ){
-                ?>
-                <div style="width: 300px; height: 300px; padding-left: 10%;display: inline-block;">
-                    <h4><?php echo $result['titolo'] ?></h4>
-                    <img src="<?php  echo "./uploades/".$result['src'] ?>" style="height: 100px; width: 200px">
-                </div>
-                <?php
-
-                }
-            }?>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<body ng-app="app">
+    <div ng-controller="ctrl1">
+        <input type="text" id="barra-ricerca" onkeyup="ricerca()" placeholder="Cerca">
+        <div class="contenitor">
+            <ul id="elenco" type="none">
+                <li ng-repeat="bar in bars"><div class="smallContenitor">{{bar.Name}}</div><div><button onclick="apriPagina()">More Info</button></div></li>
+            </ul>
+        </div>
     </div>
-
+    </body>
+    <script src="../script.js"></script>
 <?php
 require('../templates/footer.php');
 ?>
