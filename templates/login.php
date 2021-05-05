@@ -18,9 +18,6 @@ require('../templates/header.php');
                 <input style="width: 200px"  type="password" class="form-control" id="password" name="password">
             </div>
         </div>
-        <div class="col-3 d-flex">
-            <img src="./uploades/immagineLogin.png" alt="login" class="img-fluid my-auto">
-        </div>
 
         <div class="d-flex">
             <button type="submit" class="btn btn-primary">Accedi</button>

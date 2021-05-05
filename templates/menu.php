@@ -14,7 +14,7 @@
                 if($_SESSION['Admin']){
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?action=users-list">Gestione utenti</a>
+                        <a class="nav-link" href="index.php?action=user-list">Gestione utenti</a>
                     </li>
 
                     <?php
@@ -25,6 +25,9 @@
 
 
             </ul>
+            <?php
+            if ($_SESSION['authorized']){
+            ?>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -40,6 +43,13 @@
                     </ul>
                 </li>
             </ul>
+            <?php
+            }else{
+            ?>
+                <button onclick="location.href='index.php?action=login'" class="btn btn-secondary" style="background-color: dodgerblue" >Login</button>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </nav>

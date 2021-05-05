@@ -29,6 +29,6 @@
          header('Location:index.php?action=new-user');
      }
 
-     header('Location:index.php?action=users-list');
+     header('Location:index.php?action=user-list');
      
 ?>

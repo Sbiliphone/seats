@@ -5,13 +5,13 @@ require('../templates/header.php');
 require('../templates/menu.php');
 ?>
 
-
 <div style="display: none">
     <?php
     global $db;
     $sql = "SELECT * FROM User ;";
     $rs = $db->execute($sql);
     ?>
+
 </div>
 
 <div class="container">
@@ -48,7 +48,9 @@ require('../templates/menu.php');
                         <th><form method="post" action="index.php?action=modify-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Modifica</button>
                         </form></th>
                     </tr>
+
                     <?php
+
                 }
             ?>
             </tbody>
