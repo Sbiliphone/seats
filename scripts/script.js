@@ -39,10 +39,15 @@ app.controller('ctrl1', function ($scope){
         }
     }
 
-     apriPagina = function (item){
+    $scope.apriPagina = function (item) {
         console.log(item);
-        //location.href = "paginaBar.html"
-
+        sessionStorage.setItem("bar", item);
+        location.href = 'index.php?action=bar';
+        $.ajax({
+            type : "POST",
+            url  : "barInfo.php",
+            data : { "name": item }
+        });
     }
 
 });

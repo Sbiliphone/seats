@@ -40,7 +40,10 @@ switch ($action){
     case 'modify-user':
         require('../src/controller/modifyUser.php');
         break;
-    case "update-user":
+    case 'update-user':
         require('../src/controller/updateUser.php');
+        break;
+    case 'bar':
+        require('../src/controller/barInfo.php');
         break;
 }
