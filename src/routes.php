@@ -47,3 +47,5 @@ switch ($action){
         require('../src/controller/barInfo.php');
         break;
 }
+
+

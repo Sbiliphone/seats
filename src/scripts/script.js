@@ -41,13 +41,7 @@ app.controller('ctrl1', function ($scope){
 
     $scope.apriPagina = function (item) {
         console.log(item);
-        sessionStorage.setItem("bar", item);
-        location.href = 'index.php?action=bar';
-        $.ajax({
-            type : "POST",
-            url  : "barInfo.php",
-            data : { "name": item }
-        });
+        location.href = 'index.php?bar='+item;
     }
 
 });
