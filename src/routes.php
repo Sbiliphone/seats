@@ -1,5 +1,7 @@
 <?php
 $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : 'homepage';
+echo substr($action, 0, 3);
+
 
 switch ($action){
     case 'homepage':
@@ -43,9 +45,11 @@ switch ($action){
     case 'update-user':
         require('../src/controller/updateUser.php');
         break;
-    case 'bar':
-        require('../src/controller/barInfo.php');
-        break;
+
+}
+if(substr($action, 0, 3) == 'bar'){
+    //echo substr($action, 3, strlen($action));
+    require('../src/controller/barInfo.php');
 }
 
 

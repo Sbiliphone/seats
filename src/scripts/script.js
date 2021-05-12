@@ -40,8 +40,8 @@ app.controller('ctrl1', function ($scope){
     }
 
     $scope.apriPagina = function (item) {
-        console.log(item);
-        location.href = 'index.php?bar='+item;
+        console.log('index.php?action=bar'+item);
+        location.href = 'index.php?action=bar'+item;
     }
 
 });

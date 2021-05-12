@@ -1,7 +1,7 @@
 <?php
 require('../templates/header.php');
 require('../templates/menu.php');
-$bar = (isset($_REQUEST['bar'])) ? $_REQUEST['bar'] :  header('Location:index.php?action=homepage');
+$bar = $_REQUEST['bar'];
 ?>
 <body ng-app="app">
 <div ng-controller="ctrl1">
