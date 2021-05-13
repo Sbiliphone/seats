@@ -1,5 +1,6 @@
 <?php
 require('../templates/header.php');
+require('../templates/menu.php');
 ?>
 
 <div class="container my-auto">

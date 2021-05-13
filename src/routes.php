@@ -45,12 +45,32 @@ switch ($action){
     case 'update-user':
         require('../src/controller/updateUser.php');
         break;
+    case 'bar-list':
+        require('../src/controller/barList.php');
+        break;
+    case 'new-bar':
+        require('../src/controller/newBar.php');
+        break;
+    case 'save-bar':
+        require('../src/controller/saveBar.php');
+        break;
+    case 'delete-bar':
+        require('../src/controller/deleteBar.php');
+        break;
+    case 'modify-bar':
+        require('../src/controller/modifyBar.php');
+        break;
+    case 'update-bar':
+        require('../src/controller/updateBar.php');
+        break;
     case substr($action, 0, 3) == 'bar':
         require('../src/controller/barInfo.php');
         global $bar;
         $bar = substr($action, 3, strlen($action));
         bar($bar);
         break;
+
+
 }
 
 

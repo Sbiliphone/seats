@@ -16,6 +16,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=user-list">Gestione utenti</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?action=bar-list">Gestione bar</a>
+                    </li>
 
                     <?php
                 }

@@ -16,6 +16,7 @@ $id=$_REQUEST['user'];
 
     foreach($rs as $risultato){
         ?>
+<div class="container">
         <form name="user" action="index.php?action=update-user" method="post">
         <div class="row">
             <div class="col-md-6 mb-3">
@@ -36,6 +37,7 @@ $id=$_REQUEST['user'];
         </div>
         <input type="hidden" id="id" name="id" value="<?php echo $risultato["id"]; ?>">
         <button class="btn btn-primary">Salva</button>
+</div>
         <?php
     }
 ?>

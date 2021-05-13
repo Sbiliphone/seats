@@ -12,7 +12,7 @@
     }else{
         $role=1;
     }
-       $sql="UPDATE User SET email= '$email', name='$firstname', lastname='$lastname', isAdmin='$role' WHERE id='$id';";
+       $sql="UPDATE User SET email='$email', name='$firstname', lastname='$lastname', isAdmin='$role' WHERE id='$id';";
 
        $rs = $db->execute($sql);
 

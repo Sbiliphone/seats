@@ -4,7 +4,7 @@ console.log("ciao");
 
 app.controller('ctrl1', function ($scope){
     $.get(
-        '../src/controller/updateBar.php',
+        '../src/controller/getBarAngular.php',
         function( data ) {
             arrayBar = JSON.parse(data);
             $scope.$apply(function() {
