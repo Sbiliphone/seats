@@ -15,14 +15,16 @@ require('../templates/menu.php');
 </div>
 
 <div class="container">
+    <br>
     <div class="d-flex">
+
         <h3>Bar</h3>
 
         <a href="index.php?action=new-bar" class="btn btn-primary btn-sm ms-auto my-auto">Aggiungi Bar</a>
     </div>
 
     <div class="table-responsive">
-        <table class="table">
+        <table class="table"><br>
             <thead>
             <tr>
                 <th>Nome</th>

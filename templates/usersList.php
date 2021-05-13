@@ -15,6 +15,7 @@ require('../templates/menu.php');
 </div>
 
 <div class="container">
+    <br>
     <div class="d-flex">
         <h3>Utenti</h3>
 
@@ -22,7 +23,7 @@ require('../templates/menu.php');
     </div>
 
     <div class="table-responsive">
-        <table class="table">
+        <table class="table"><br>
             <thead>
                 <tr>
                     <th>Username</th>
