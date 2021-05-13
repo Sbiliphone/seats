@@ -1,12 +1,13 @@
 <?php
 require('../templates/header.php');
 require('../templates/menu.php');
-$bar = $_REQUEST['bar'];
+$bar = $_SESSION['bar'];
 //echo $bar;
 ?>
 <div style="display: none">
 <?php
     global $db;
+
     $sql = "SELECT * FROM Bar;";
     $rs = $db->execute($sql);
     global $db;
@@ -15,19 +16,19 @@ $bar = $_REQUEST['bar'];
 ?>
 </div>
 <?php
-var_dump($rs)
-
+foreach ($rs as $risultato){
 ?>
 <body ng-app="app">
 <div ng-controller="ctrl1">
 
 
-    <iframe width="100%" height="500" src="https://maps.google.com/maps?q=<?php echo "15"; ?>,<?php echo "56"; ?>&output=embed"></iframe>
+    <iframe width="100%" height="500" src="https://maps.google.com/maps?q=<?php echo $risultato['Latitude']; ?>,<?php echo $risultato['Longitude']; ?>&output=embed"></iframe>
 </div>
 </body>
 
 
 
 <?php
+}
 require('../templates/footer.php');
 ?>
