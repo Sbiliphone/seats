@@ -1,4 +1,10 @@
 <?php
-require('../templates/barInfo.php');
-$bar = (isset($_REQUEST['bar'])) ? $_REQUEST['bar'] :  header('Location:index.php?action=homepage');
+
+function bar($item){
+    //echo "sono bar";
+    //echo $item;
+    $_SESSION['bar']=$item;
+    require('../templates/barInfo.php');
+}
+
 ?>
