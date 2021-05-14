@@ -21,12 +21,27 @@ foreach ($rs as $risultato){
 <body>
 <div class="container">
     <h1><?php echo $risultato['name']; ?></h1>
+    <iframe width="500" height="500" src="https://maps.google.com/maps?q=<?php echo $risultato['latitude']; ?>,<?php echo $risultato['longitude']; ?>&output=embed"></iframe>
+    <?php
+    if ($_SESSION['authorized']){
+        ?>
     <form name="user" action="index.php?action=save-report" method="post">
         <div class="form-group"><label for="report">Quante persone ci sono secondo te? </label><input type="text" id="report" name="report"  maxlength="180" class="form-control"></div>
+        <br>
         <button class="btn btn-primary">Invia</button>
         <input type="hidden" id="user__token" name="user[_token]" value="">
+        <br>
     </form>
-    <iframe width="500" height="500" src="https://maps.google.com/maps?q=<?php echo $risultato['latitude']; ?>,<?php echo $risultato['longitude']; ?>&output=embed"></iframe>
+
+        <?php
+    }else{
+        ?>
+        <p>Per inserire un commento bisogna registrarsi </p>
+        <a href="index.php?action=new-user" class="btn btn-primary btn-sm ms-auto my-auto">Registrati</a>
+        <?php
+    }
+    ?>
+
 </div>
 </body>
 

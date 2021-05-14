@@ -54,9 +54,15 @@ require('../templates/menu.php');
                 <div class="col-md-6 mb-3">
                     <div class="form-group"><label for="user_password_second" class="required">Ripeti Password</label><input type="password" id="user_password_second" name="password2" required="required" class="password-field form-control"></div>
                 </div>
+            <?php
+            if ($_SESSION['authorized']){
+            ?>
                 <div class="col-12 mb-3">
                 <div class="form-group"><label class="required" for="user_roles">Ruolo</label><select id="user_roles" name="roles" class="form-control"><option value="false" selected="selected">User</option><option value=1>Admin</option></select></div>
             </div>
+                <?php
+            }
+            ?>
             <div class="col-md mb-3">
                 <div class="form-group"><label for="user_firstname">Nome</label><input type="text" id="user_firstname" name="firstname" class="form-control"></div>
             </div>

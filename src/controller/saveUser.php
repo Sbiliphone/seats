@@ -8,13 +8,18 @@
      $firstname=$_REQUEST['firstname'];
      $lastname=$_REQUEST['lastname'];
      $email=$_REQUEST['email'];
-     $role=$_REQUEST['roles']; 
+if ($_SESSION['authorized']) {
+    $role=$_REQUEST['roles'];
 
-     if($role=='false'){
+    if($role=='false'){
         $role=0;
-     }else{
-         $role=1;
-     }
+    }else{
+        $role=1;
+    }
+}else{
+    $role=0;
+}
+
 
      if($password1==$password2){
 
@@ -29,6 +34,9 @@
          header('Location:index.php?action=new-user');
      }
 
-     header('Location:index.php?action=user-list');
-     
+if ($_SESSION['authorized']) {
+    header('Location:index.php?action=user-list');
+}else{
+    header('Location:index.php?action=login');
+}
 ?>
