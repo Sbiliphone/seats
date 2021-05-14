@@ -63,6 +63,8 @@ switch ($action){
     case 'update-bar':
         require('../src/controller/updateBar.php');
         break;
+    case 'save-report':
+        require('../src/controller/saveReport.php');
     case substr($action, 0, 3) == 'bar':
         require('../src/controller/barInfo.php');
         global $bar;

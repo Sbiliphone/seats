@@ -16,6 +16,7 @@ function loginCheck()
         foreach ($rs as $result) {
             $_SESSION['authorized']=true;
             $_SESSION['username']=$username;
+            $_SESSION['idUser']=$result['id'];
             $_SESSION['Admin']=$result['isAdmin'];
 
 
