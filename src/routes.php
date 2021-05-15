@@ -65,6 +65,16 @@ switch ($action){
         break;
     case 'save-report':
         require('../src/controller/saveReport.php');
+        break;
+    case substr($action, 0, 11) == 'report-list':
+        require('../src/controller/reportList.php');
+        global $order;
+        $order = substr($action, 12, strlen($action));
+        order($order);
+        break;
+    case 'delete-report':
+        require('../src/controller/deleteReport.php');
+        break;
     case substr($action, 0, 3) == 'bar':
         require('../src/controller/barInfo.php');
         global $bar;

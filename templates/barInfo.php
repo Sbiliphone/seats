@@ -20,7 +20,9 @@ foreach ($rs as $risultato){
 ?>
 <body>
 <div class="container">
+    <br>
     <h1><?php echo $risultato['name']; ?></h1>
+    <br>
     <iframe width="500" height="500" src="https://maps.google.com/maps?q=<?php echo $risultato['latitude']; ?>,<?php echo $risultato['longitude']; ?>&output=embed"></iframe>
     <?php
     if ($_SESSION['authorized']){
