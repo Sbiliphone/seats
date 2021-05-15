@@ -29,7 +29,10 @@ require('../templates/menu.php');
                 <?php
             }
             ?>
+
         </div>
+        <p>Se non sei registrato schiaccia qui!</p>
+        <a href="index.php?action=new-user" class="btn btn-primary btn-sm ms-auto my-auto">Registrati</a>
         </div>
 
     </form>

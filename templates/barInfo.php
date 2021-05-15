@@ -37,7 +37,7 @@ foreach ($rs as $risultato){
     }else{
         ?>
         <p>Per inserire un commento bisogna registrarsi </p>
-        <a href="index.php?action=new-user" class="btn btn-primary btn-sm ms-auto my-auto">Registrati</a>
+        <a href="index.php?action=login" class="btn btn-primary btn-sm ms-auto my-auto">Login</a>
         <?php
     }
     ?>
