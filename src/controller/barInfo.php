@@ -5,6 +5,4 @@ function bar($item){
     //echo $item;
     $_SESSION['idBar']=$item;
     require('../templates/barInfo.php');
-}
-
-?>
+}?>
