@@ -1,11 +1,9 @@
 <?php
-function login()
-{
+function login(){
     require('../templates/login.php');
 }
 
-function loginCheck()
-{
+function loginCheck(){
     global $db;
     $username=$_REQUEST['username'];
     $password=md5($_REQUEST['password']);
@@ -18,23 +16,15 @@ function loginCheck()
             $_SESSION['username']=$username;
             $_SESSION['idUser']=$result['id'];
             $_SESSION['Admin']=$result['isAdmin'];
-
-
         }
-
-
         header('Location: index.php');
-
-
     } else {
         $_SESSION['messaggio']='Credenziali non valide';
         header('Location: index.php?action=login');
     }
 }
 
-function logout()
-{
+function logout(){
     session_destroy();
     header('Location: index.php');
-
 }

@@ -1,7 +1,5 @@
 <?php
 require('../templates/header.php');
-?>
-<?php
 require('../templates/menu.php');
 ?>
 
@@ -11,7 +9,6 @@ require('../templates/menu.php');
     $sql = "SELECT * FROM User ;";
     $rs = $db->execute($sql);
     ?>
-
 </div>
 
 <div class="container">
@@ -49,16 +46,13 @@ require('../templates/menu.php');
                         <th><form method="post" action="index.php?action=modify-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Modifica</button>
                         </form></th>
                     </tr>
-
                     <?php
-
                 }
             ?>
             </tbody>
         </table>
     </div>
 </div>
-
 <?php
     require('../templates/footer.php');
 ?> 
