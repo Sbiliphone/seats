@@ -17,6 +17,7 @@ $bar = $_SESSION['idBar'];
 <?php
 foreach ($rs as $risultato){
     $_SESSION['bar']=$risultato['name'];
+    //https://www.chartjs.org/docs/latest/
 ?>
 <body>
 <div class="container">
