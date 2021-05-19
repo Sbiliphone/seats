@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 18, 2021 at 10:42 PM
+-- Generation Time: May 19, 2021 at 10:39 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -39,7 +39,15 @@ INSERT INTO `Bar` (`id`, `seats`, `name`, `city`, `address`, `longitude`, `latit
 (2, 20, 'BarLume Udine', 'Udine', 'Vicolo Pulesi 6', '13.233470369412558', '46.064332209653024'),
 (5, 16, 'Bar Alla Rocca Udine', 'Udine', 'P.za Guglielmo Marconi 8', '13.23430262708424', '46.06499021751462'),
 (6, 12, 'Hell\'s bistrot', 'Udine', 'Corte Savorgnan', '13.235262513591529', '46.06198685798241'),
-(7, 22, 'Tal Cûr di Buri', 'Buttrio', 'Via Cividale 26/1/A', '13.335442630684007', '46.01633285272148');
+(7, 22, 'Tal Cûr di Buri', 'Buttrio', 'Via Cividale 26/1/A', '13.335442630684007', '46.01633285272148'),
+(8, 16, 'Bar Al Duomo', 'Udine', 'Via Vittorio Veneto 30', '13.238233327161577', '46.06264804572599'),
+(9, 19, 'Delser', 'Udine', 'Via Cavour 18a', '13.234779442503342', '46.06240619068368'),
+(10, 28, 'Caffè Contarena', 'Udine', 'Via Cavour 1', '13.235268427161538', '46.06328091062551'),
+(11, 9, 'Bar Americano', 'Udine', 'Piazza Libertà 7', '13.236040348654356', '46.063162492850864'),
+(12, 34, 'Bar San Giacomo', 'Udine', 'Piazza Giacomo Matteotti 22', '13.233667160576246', '46.06340291685443'),
+(13, 40, 'Italian Secret', 'Udine', 'Piazza Giacomo Matteotti 18', '13.233469175334342', '46.06340909818938'),
+(14, 42, 'Osteria da Teresina', 'Udine', 'Via Paolo Sarpi 10/A', '13.23321606668251', '46.06438099764393'),
+(15, 18, 'Caffè Enoteca Rialto', 'Udine', 'Via Rialto 12', '13.23395781356849', '46.06238804310243');
 
 -- --------------------------------------------------------
 
@@ -48,13 +56,13 @@ INSERT INTO `Bar` (`id`, `seats`, `name`, `city`, `address`, `longitude`, `latit
 --
 
 CREATE TABLE `Report` (
-  `id` int(250) NOT NULL,
-  `used` int(250) NOT NULL,
-  `day` varchar(250) NOT NULL,
-  `hour` varchar(250) NOT NULL,
-  `bar` int(250) NOT NULL,
-  `user` int(250) NOT NULL,
-  `fullDate` varchar(250) NOT NULL
+                          `id` int(250) NOT NULL,
+                          `used` int(250) NOT NULL,
+                          `day` varchar(250) NOT NULL,
+                          `hour` varchar(250) NOT NULL,
+                          `bar` int(250) NOT NULL,
+                          `user` int(250) NOT NULL,
+                          `fullDate` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -72,7 +80,8 @@ INSERT INTO `Report` (`id`, `used`, `day`, `hour`, `bar`, `user`, `fullDate`) VA
 (10, 22, 'Saturday', '10:19', 7, 1, '15/05/21'),
 (11, 45, 'Saturday', '10:45', 1, 1, '15/05/21'),
 (12, 23, 'Saturday', '10:54', 1, 1, '15/05/21'),
-(13, 12, 'Tuesday', '23:49', 1, 1, '18/05/21');
+(13, 12, 'Tuesday', '23:49', 1, 1, '18/05/21'),
+(14, 24, 'Wednesday', '22:04', 2, 2, '19/05/21');
 
 -- --------------------------------------------------------
 
@@ -81,13 +90,13 @@ INSERT INTO `Report` (`id`, `used`, `day`, `hour`, `bar`, `user`, `fullDate`) VA
 --
 
 CREATE TABLE `User` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `isAdmin` tinyint(1) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `lastname` varchar(255) DEFAULT NULL
+                        `id` int(11) NOT NULL,
+                        `username` varchar(255) NOT NULL,
+                        `password` varchar(255) NOT NULL,
+                        `isAdmin` tinyint(1) DEFAULT NULL,
+                        `email` varchar(255) DEFAULT NULL,
+                        `name` varchar(255) DEFAULT NULL,
+                        `lastname` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -97,7 +106,8 @@ CREATE TABLE `User` (
 INSERT INTO `User` (`id`, `username`, `password`, `isAdmin`, `email`, `name`, `lastname`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'admin@admin.com', 'Alessandro', 'Ligugnana'),
 (2, 'pippo', '0c88028bf3aa6a6a143ed846f2be1ea4', 0, 'pippo@gmail.com', 'Filippo', 'Inzaghi'),
-(3, 'Ambraa', '41f9a6f19fb77f2527b6a74b8adfda5d', 0, 'ambrabb@gmail.com', 'Ambra', 'Bortolotti');
+(3, 'Ambraa', '41f9a6f19fb77f2527b6a74b8adfda5d', 0, 'ambrabb@gmail.com', 'Ambra', 'Bortolotti'),
+(4, 'NicoleFantasticaBellissima', 'fc63f87c08d505264caba37514cd0cfd', 0, 'nicole.pagano@gmail.com', 'Nicole', 'Pagano');
 
 --
 -- Indexes for dumped tables
@@ -107,22 +117,22 @@ INSERT INTO `User` (`id`, `username`, `password`, `isAdmin`, `email`, `name`, `l
 -- Indexes for table `Bar`
 --
 ALTER TABLE `Bar`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Report`
 --
 ALTER TABLE `Report`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `report_ibfk_1` (`bar`),
-  ADD KEY `user` (`user`);
+    ADD PRIMARY KEY (`id`),
+    ADD KEY `report_ibfk_1` (`bar`),
+    ADD KEY `user` (`user`);
 
 --
 -- Indexes for table `User`
 --
 ALTER TABLE `User`
-  ADD UNIQUE KEY `id` (`id`) USING BTREE,
-  ADD UNIQUE KEY `username` (`username`) USING BTREE;
+    ADD UNIQUE KEY `id` (`id`) USING BTREE,
+    ADD UNIQUE KEY `username` (`username`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -132,19 +142,19 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Bar`
 --
 ALTER TABLE `Bar`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `Report`
 --
 ALTER TABLE `Report`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -154,5 +164,5 @@ ALTER TABLE `User`
 -- Constraints for table `Report`
 --
 ALTER TABLE `Report`
-  ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`bar`) REFERENCES `Bar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `report_ibfk_2` FOREIGN KEY (`user`) REFERENCES `User` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+    ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`bar`) REFERENCES `Bar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    ADD CONSTRAINT `report_ibfk_2` FOREIGN KEY (`user`) REFERENCES `User` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

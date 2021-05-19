@@ -10,7 +10,7 @@ function graphic(Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
         ],
     };
     const options = {
-        chart: { title: 'Media posti occupati', width: 800, height: 400 },
+        chart: { title: 'Media posti occupati', width: 500, height: 500 },
         legend: {visible: false},
         exportMenu: {visible: false},
     };

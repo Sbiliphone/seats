@@ -11,5 +11,29 @@
     });
 </script>
 
-</body>
-</html>
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+
+    <center>
+        <!-- Links --><br>
+
+        <h6 class="text-uppercase fw-bold mb-4">
+            Contatti
+        </h6>
+        <p><i class="bi bi-person-fill"></i></i> Ligugnana Alessandro</p>
+        <p>
+            <i class="bi bi-mailbox"></i>
+            alessandro.ligugnana@gmail.com
+        </p>
+        <p><i class="bi bi-phone"></i></i> +39 331 276 1217</p>
+    </center>
+
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->

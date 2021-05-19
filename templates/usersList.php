@@ -40,7 +40,11 @@ require('../templates/menu.php');
                         <th><?php echo $risultato['email'];?></th>
                         <th><?php echo $risultato['name'];?></th>
                         <th><?php echo $risultato['lastname'];?></th>
-                        <th><?php echo $risultato['isAdmin'];?></th>
+                        <th><?php if ($risultato['isAdmin'] == 1) {
+                                echo "Si";
+                            }else{
+                            echo "No";
+                            }?></th>
                         <th><form method="post" action="index.php?action=delete-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Elimina</button>
                         </form></th>
                         <th><form method="post" action="index.php?action=modify-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Modifica</button>
