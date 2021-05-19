@@ -15,13 +15,13 @@ function calcolaMedia($nums) {
     return $res/$qt;
 }
     global $db;
-    $Monday =[];
-    $Tuesday =[];
-    $Wednesday =[];
-    $Thursday =[];
-    $Friday =[];
-    $Saturday =[];
-    $Sunday =[];
+    $Monday = 0;
+    $Tuesday = 0;
+    $Wednesday = 0;
+    $Thursday = 0;
+    $Friday = 0;
+    $Saturday = 0;
+    $Sunday = 0;
 
     $sql = "SELECT * FROM Bar;";
     $rs = $db->execute($sql);
@@ -30,46 +30,46 @@ function calcolaMedia($nums) {
     $rs = $db->execute($sql);
 
     $attualMounth = date("m");
-    $sqlMonday = "SELECT used FROM Report WHERE day='Monday' AND fullDate LIKE '%/$attualMounth/%';";
+    $sqlMonday = "SELECT AVG(used) FROM Report WHERE day='Monday' AND fullDate LIKE '%/$attualMounth/%' AND bar='$bar';";
     $rsMonday = $db->execute($sqlMonday);
     foreach ($rsMonday as $risultatoMonday){
-        $Monday = calcolaMedia($risultatoMonday['used']);
+        $Monday = (int)$risultatoMonday['used'];
     }
 
-    $sqlTuesday = "SELECT used FROM Report WHERE day='Tuesday' AND fullDate LIKE '%/$attualMounth/%';";
+    $sqlTuesday = "SELECT AVG(used) FROM Report WHERE day='Tuesday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsTuesday = $db->execute($sqlTuesday);
     foreach ($rsTuesday as $risultatoTuesday){
-        $Tuesday = calcolaMedia($risultatoTuesday['used']);
+        $Tuesday = (int)$risultatoTuesday['used'];
     }
 
-    $sqlWednesday = "SELECT used FROM Report WHERE day='Wednesday' AND fullDate LIKE '%/$attualMounth/%';";
+    $sqlWednesday = "SELECT AVG(used) FROM Report WHERE day='Wednesday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsWednesday = $db->execute($sqlWednesday);
     foreach ($rsWednesday as $risultatoWednesday){
-        $Wednesday = calcolaMedia($risultatoWednesday['used']);
+        $Wednesday = (int)$risultatoWednesday['used'];
     }
 
-    $sqlThursday = "SELECT used FROM Report WHERE day='Thursday' AND fullDate LIKE '%/$attualMounth/%';";
+    $sqlThursday = "SELECT AVG(used) FROM Report WHERE day='Thursday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsThursday = $db->execute($sqlThursday);
     foreach ($rsThursday as $risultatoThursday){
-        $Thursday = calcolaMedia($risultatoThursday['used']);
+        $Thursday = (int)$risultatoThursday['used'];
     }
 
-    $sqlFriday = "SELECT used FROM Report WHERE day='Friday' AND fullDate LIKE '%/$attualMounth/%';";
+    $sqlFriday = "SELECT AVG(used) FROM Report WHERE day='Friday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsFriday = $db->execute($sqlFriday);
     foreach ($rsFriday as $risultatoFriday){
-        $Friday = calcolaMedia($risultatoFriday['used']);
+        $Friday = (int)$risultatoFriday['used'];
     }
 
     $sqlSaturday = "SELECT used FROM Report WHERE day='Saturday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsSaturday = $db->execute($sqlSaturday);
     foreach ($rsSaturday as $risultatoSaturday){
-        $Saturday = calcolaMedia($risultatoSaturday['used']);
+        $Saturday = (int)$risultatoSaturday['used'];
     }
 
-    $sqlSunday = "SELECT used FROM Report WHERE day='Sunday' AND fullDate LIKE '%/$attualMounth/%';";
+    $sqlSunday = "SELECT AVG(used) FROM Report WHERE day='Sunday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsSunday = $db->execute($sqlSunday);
     foreach ($rsSunday as $risultatoSunday){
-        $Sunday = calcolaMedia($risultatoSunday['used']);
+        $Sunday = (int)$risultatoSunday['used'];
     }
 ?>
 
