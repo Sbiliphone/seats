@@ -39,14 +39,14 @@ require('../templates/menu.php');
             foreach($rs as $risultato){
                 ?>
                 <tr>
-                    <th><?php echo $risultato['name'];?></th>
-                    <th><?php echo $risultato['address'];?></th>
-                    <th><?php echo $risultato['city'];?></th>
-                    <th><?php echo $risultato['seats'];?></th>
-                    <th><form method="post" action="index.php?action=delete-bar"><input type="hidden" id="bar" name="bar" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Elimina</button>
-                        </form></th>
-                    <th><form method="post" action="index.php?action=modify-bar"><input type="hidden" id="bar" name="bar" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Modifica</button>
-                        </form></th>
+                    <td><?php echo $risultato['name'];?></td>
+                    <td><?php echo $risultato['address'];?></td>
+                    <td><?php echo $risultato['city'];?></td>
+                    <td><?php echo $risultato['seats'];?></td>
+                    <td><form method="post" action="index.php?action=delete-bar"><input type="hidden" id="bar" name="bar" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Elimina</button>
+                        </form></td>
+                    <td><form method="post" action="index.php?action=modify-bar"><input type="hidden" id="bar" name="bar" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Modifica</button>
+                        </form></td>
                 </tr>
 
                 <?php

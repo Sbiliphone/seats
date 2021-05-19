@@ -27,7 +27,7 @@ require('../templates/menu.php');
                     <th>Email</th>
                     <th>Nome</th>
                     <th>Cognome</th>
-                    <td>Admin</td>
+                    <th>Admin</th>
                     <th></th>
                 </tr>
             </thead>
@@ -36,19 +36,19 @@ require('../templates/menu.php');
                 foreach($rs as $risultato){
                     ?>
                     <tr>
-                        <th><?php echo $risultato['username'];?></th>
-                        <th><?php echo $risultato['email'];?></th>
-                        <th><?php echo $risultato['name'];?></th>
-                        <th><?php echo $risultato['lastname'];?></th>
-                        <th><?php if ($risultato['isAdmin'] == 1) {
+                        <td><?php echo $risultato['username'];?></td>
+                        <td><?php echo $risultato['email'];?></td>
+                        <td><?php echo $risultato['name'];?></td>
+                        <td><?php echo $risultato['lastname'];?></td>
+                        <td><?php if ($risultato['isAdmin'] == 1) {
                                 echo "Si";
                             }else{
                             echo "No";
-                            }?></th>
-                        <th><form method="post" action="index.php?action=delete-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Elimina</button>
-                        </form></th>
-                        <th><form method="post" action="index.php?action=modify-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Modifica</button>
-                        </form></th>
+                            }?></td>
+                        <td><form method="post" action="index.php?action=delete-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Elimina</button>
+                        </form></td>
+                        <td><form method="post" action="index.php?action=modify-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Modifica</button>
+                        </form></td>
                     </tr>
                     <?php
                 }

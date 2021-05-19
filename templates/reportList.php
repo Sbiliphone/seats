@@ -69,11 +69,11 @@ require('../templates/menu.php');
             foreach($rs as $risultato){
                 ?>
                 <tr>
-                    <th><?php echo $risultato['used'];?></th>
-                    <th><?php echo $risultato['day'];?></th>
-                    <th><?php echo $risultato['fullDate'];?></th>
-                    <th><?php echo $risultato['hour'];?></th>
-                    <th>
+                    <td><?php echo $risultato['used'];?></td>
+                    <td><?php echo $risultato['day'];?></td>
+                    <td><?php echo $risultato['fullDate'];?></td>
+                    <td><?php echo $risultato['hour'];?></td>
+                    <td>
                         <div style="display: none">
                         <?php  $bar = $risultato['bar'];
                         $sql = "SELECT name FROM Bar WHERE id='$bar';";
@@ -84,8 +84,8 @@ require('../templates/menu.php');
                         <?php
                             foreach($rs as $risultatoBar) {
                                 echo $risultatoBar['name'];
-                            }?></th>
-                    <th>
+                            }?></td>
+                    <td>
 
                         <div style="display: none">
                         <?php  $user = $risultato['user'];
@@ -98,9 +98,9 @@ require('../templates/menu.php');
 
                             foreach($rs as $risultatoUser) {
                                 echo $risultatoUser['username'];
-                            }?></th>
-                    <th><form method="post" action="index.php?action=delete-report"><input type="hidden" id="report" name="report" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Elimina</button>
-                        </form></th>
+                            }?></td>
+                    <td><form method="post" action="index.php?action=delete-report"><input type="hidden" id="report" name="report" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Elimina</button>
+                        </form></td>
                 </tr>
 
                 <?php
