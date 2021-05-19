@@ -6,14 +6,6 @@ $bar = $_SESSION['idBar'];
 <div style="display: none">
 <?php
 
-function calcolaMedia($nums) {
-    $qt = count($nums);
-    $res = 0;
-    foreach ($nums as $n) {
-        $res += $n;
-    }
-    return $res/$qt;
-}
     global $db;
     $Monday = 0;
     $Tuesday = 0;
@@ -33,48 +25,48 @@ function calcolaMedia($nums) {
     $sqlMonday = "SELECT AVG(used) FROM Report WHERE day='Monday' AND fullDate LIKE '%/$attualMounth/%' AND bar='$bar';";
     $rsMonday = $db->execute($sqlMonday);
     foreach ($rsMonday as $risultatoMonday){
-        $Monday = (int)$risultatoMonday['used'];
+        echo $risultatoMonday['AVG(used)'];
+        $Monday = (int)$risultatoMonday['AVG(used)'];
     }
 
     $sqlTuesday = "SELECT AVG(used) FROM Report WHERE day='Tuesday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsTuesday = $db->execute($sqlTuesday);
     foreach ($rsTuesday as $risultatoTuesday){
-        $Tuesday = (int)$risultatoTuesday['used'];
+        $Tuesday = (int)$risultatoTuesday['AVG(used)'];
     }
 
     $sqlWednesday = "SELECT AVG(used) FROM Report WHERE day='Wednesday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsWednesday = $db->execute($sqlWednesday);
     foreach ($rsWednesday as $risultatoWednesday){
-        $Wednesday = (int)$risultatoWednesday['used'];
+        $Wednesday = (int)$risultatoWednesday['AVG(used)'];
     }
 
     $sqlThursday = "SELECT AVG(used) FROM Report WHERE day='Thursday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsThursday = $db->execute($sqlThursday);
     foreach ($rsThursday as $risultatoThursday){
-        $Thursday = (int)$risultatoThursday['used'];
+        $Thursday = (int)$risultatoThursday['AVG(used)'];
     }
 
     $sqlFriday = "SELECT AVG(used) FROM Report WHERE day='Friday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsFriday = $db->execute($sqlFriday);
     foreach ($rsFriday as $risultatoFriday){
-        $Friday = (int)$risultatoFriday['used'];
+        $Friday = (int)$risultatoFriday['AVG(used)'];
     }
 
     $sqlSaturday = "SELECT used FROM Report WHERE day='Saturday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsSaturday = $db->execute($sqlSaturday);
     foreach ($rsSaturday as $risultatoSaturday){
-        $Saturday = (int)$risultatoSaturday['used'];
+        $Saturday = (int)$risultatoSaturday['AVG(used)'];
     }
 
     $sqlSunday = "SELECT AVG(used) FROM Report WHERE day='Sunday' AND fullDate LIKE '%/$attualMounth/%';";
     $rsSunday = $db->execute($sqlSunday);
     foreach ($rsSunday as $risultatoSunday){
-        $Sunday = (int)$risultatoSunday['used'];
+        $Sunday = (int)$risultatoSunday['AVG(used)'];
     }
 ?>
 
 </div>
-<?php echo $Friday; ?>
 <?php
 foreach ($rs as $risultato){
     $_SESSION['bar']=$risultato['name'];
@@ -86,7 +78,7 @@ foreach ($rs as $risultato){
     <h1><?php echo $risultato['name']; ?></h1>
     <br>
     <iframe width="500" height="500" src="https://maps.google.com/maps?q=<?php echo $risultato['latitude']; ?>,<?php echo $risultato['longitude']; ?>&output=embed"></iframe>
-    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+    <div id="chart-area"></div>
     <?php
     if ($_SESSION['authorized']){
         ?>
