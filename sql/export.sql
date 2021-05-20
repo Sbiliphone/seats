@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 19, 2021 at 10:39 PM
+-- Generation Time: May 20, 2021 at 10:50 AM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -81,7 +81,11 @@ INSERT INTO `Report` (`id`, `used`, `day`, `hour`, `bar`, `user`, `fullDate`) VA
 (11, 45, 'Saturday', '10:45', 1, 1, '15/05/21'),
 (12, 23, 'Saturday', '10:54', 1, 1, '15/05/21'),
 (13, 12, 'Tuesday', '23:49', 1, 1, '18/05/21'),
-(14, 24, 'Wednesday', '22:04', 2, 2, '19/05/21');
+(14, 24, 'Wednesday', '22:04', 2, 2, '19/05/21'),
+(19, 13, 'Thursday', '12:14', 8, 1, '20/05/21'),
+(20, 23, 'Thursday', '12:16', 8, 1, '20/05/21'),
+(24, 45, 'Thursday', '12:36', 8, 1, '20/05/21'),
+(25, 13, 'Thursday', '12:36', 8, 1, '20/05/21');
 
 -- --------------------------------------------------------
 
@@ -148,7 +152,7 @@ ALTER TABLE `Bar`
 -- AUTO_INCREMENT for table `Report`
 --
 ALTER TABLE `Report`
-    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `User`
