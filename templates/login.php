@@ -4,12 +4,10 @@ require('../templates/menu.php');
 ?>
 
 <div class="container my-auto">
-    <form method="post" action="?action=login-check" style="margin-left: 550px">
+    <center>
+    <form method="post" action="?action=login-check">
         <div class="mb-3">
-            <div style="margin-left: -90px" class="col-md-6  text-center mb-md-3">
-                <h2 class="mb-0">Log in, please.</h2>
-                <p>You're almost there, you only need to tell us who you are!</p>
-            </div>
+            <h2 class="mb-0">Log in</h2><br>
 
             <label for="username" class="form-label">Username</label>
             <input style="width: 200px" type="text" class="form-control" id="username" aria-describedby="usernameHelp" name="username">
@@ -20,7 +18,6 @@ require('../templates/menu.php');
             </div>
         </div>
 
-        <div class="d-flex">
             <button type="submit" class="btn btn-primary">Accedi</button>
             <?php
             if (isset($_SESSION['messaggio'])) {
@@ -28,15 +25,13 @@ require('../templates/menu.php');
                 <div class="text-danger my-auto ms-3"><?= $_SESSION['messaggio']; ?></div>
                 <?php
             }
-            ?>
-
-        </div>
-        <p>Se non sei registrato schiaccia qui!</p>
-        <a href="index.php?action=new-user" class="btn btn-primary btn-sm ms-auto my-auto">Registrati</a>
+            ?><br><br>
+        <p>Se non sei registrato clicca qui!</p>
+        <a href="index.php?action=new-user" class="btn btn-outline-primary">Registrati</a>
         </div>
 
     </form>
-
+    </center>
 </div>
 
 <?php

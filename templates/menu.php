@@ -52,7 +52,7 @@
             <?php
             }else{
             ?>
-                <button onclick="location.href='index.php?action=login'" class="btn btn-secondary" style="background-color: dodgerblue" >Login</button>
+                <button onclick="location.href='index.php?action=login'" class="btn btn-outline-primary">Login</button>
             <?php
             }
             ?>

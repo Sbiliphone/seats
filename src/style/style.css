@@ -11,8 +11,23 @@ footer {
     width: 100%;
 }
 
-.btn-primary { background-color: #fc791e; border: #e69e19; }
+.btn-primary {
+    background-color: #fc791e;
+    border: #e69e19;
+}
 .btn-primary:hover {
     background-color: #ff9b29;
     color: white;
 }
+.btn-outline-primary{
+    border-color: #fc791e;
+    color: #fc791e;
+}
+
+.btn-outline-primary:hover{
+    background-color: #ff9b29;
+    border-color: #ff9b29;
+    color: white;
+}
+
+.btn-primary.dropdown-toggle{color:#ff9b29;background-color:#ff9b29;border-color:#ff9b29}

@@ -84,11 +84,11 @@ foreach ($rs as $risultato){
             <div id="chart-area" class="col-4" ></div><div class="col-4"></div>
             <div class="col-4" "><iframe width="500" height="500" src="https://maps.google.com/maps?q=<?php echo $risultato['latitude']; ?>,<?php echo $risultato['longitude']; ?>&output=embed"></iframe></div>
         </div>
-
+<hr>
     <?php
     if ($_SESSION['authorized']){
         ?>
-            <hr>
+
     <form name="user" action="index.php?action=save-report" method="post">
         <div class="form-group"><label for="report">Quante persone ci sono secondo te? </label><br><input type="number" id="report" name="report"  maxlength="180"  style="width: 5%" class="form-control" required ></div><br>
 
@@ -100,7 +100,7 @@ foreach ($rs as $risultato){
         <?php
     }else{
         ?>
-        <p>Per inserire un commento bisogna registrarsi </p><br>
+        <p>Per inserire un commento bisogna registrarsi </p>
         <a href="index.php?action=login" class="btn btn-primary btn-sm ms-auto my-auto">Login</a>
         <?php
     }
