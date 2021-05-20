@@ -16,10 +16,6 @@
 
     <center>
         <!-- Links --><br>
-
-        <h6 class="text-uppercase fw-bold mb-4">
-            Contatti
-        </h6>
         <p><i class="bi bi-person-fill"></i></i> Ligugnana Alessandro</p>
         <p>
             <i class="bi bi-mailbox"></i>

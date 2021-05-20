@@ -8,7 +8,7 @@ if ($mysqli->connect_error) {
 }
 
 
-$sql = "SELECT * FROM Bar";
+$sql = "SELECT * FROM Bar ORDER BY name";
 $result = mysqli_query($mysqli, $sql);
 
 $mio_array = array();

@@ -1,4 +1,8 @@
 <?php
+echo 'ciao';
+if ($_SESSION['maxSeats'] < $_REQUEST['report']){
+    header('Location:index.php?action=bar'.$_SESSION['idBar']);
+}
 
 
 global $db;

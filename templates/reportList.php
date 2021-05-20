@@ -55,7 +55,7 @@ require('../templates/menu.php');
             </tr>
             </thead>
             <tbody>
-            <select onchange="location.href='index.php?action=report-list-'+this.value" ="<?php echo $_SESSION['order']?>">
+            <select class="form-select" style="width: 13%" onchange="location.href='index.php?action=report-list-'+this.value" ="<?php echo $_SESSION['order']?>">
                 <option value="default" <?php if($_SESSION['order'] == 'default'){echo ("selected");} ?>>Riordina per:</option>
                 <option value="used" <?php if($_SESSION['order'] == 'used'){echo ("selected");} ?>>Posti a sedere</option>
                 <option value="date" <?php if($_SESSION['order'] == 'date'){echo ("selected");} ?>>Data</option>
@@ -64,6 +64,7 @@ require('../templates/menu.php');
                 <option value="bar" <?php if($_SESSION['order'] == 'bar'){echo ("selected");} ?>>Bar</option>
                 <option value="user" <?php if($_SESSION['order'] == 'user'){echo ("selected");} ?>>User</option>
             </select>
+            <br>
 
             <?php
             foreach($rs as $risultato){
