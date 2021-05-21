@@ -16,7 +16,7 @@ require('../templates/menu.php');
     </body>
 </html>
 
-    <script src="../src/scripts/script.js">
+    <script src="../src/scripts/angularApp.js">
     </script>
 <?php
 require('../templates/footer.php');

@@ -9,13 +9,22 @@
             element.classList.add('active');
         }
     });
+
+    function validate(seats){
+        report = document.getElementById("report").value;
+        if(parseInt(report) > parseInt(seats)){
+            alert("Valore inserito non valido");
+        }else {
+            location.href="index.php?action=save-report-" + report;
+        }
+    }
 </script>
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
 
     <center>
-        <!-- Links --><br>
+        <br>
         <p><i class="bi bi-person-fill"></i></i> Ligugnana Alessandro</p>
         <p>
             <i class="bi bi-mailbox"></i>

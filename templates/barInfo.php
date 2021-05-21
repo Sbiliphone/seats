@@ -70,7 +70,6 @@ $bar = $_SESSION['idBar'];
 <?php
 foreach ($rs as $risultato){
     $_SESSION['bar']=$risultato['name'];
-    $_SESSION['maxSeats']=$risultato['seats'];
     //https://www.chartjs.org/docs/latest/
 ?>
 <body onload="graphic(<?php echo $Monday; ?>, <?php echo $Tuesday; ?>, <?php echo $Wednesday; ?>, <?php echo $Thursday; ?>, <?php echo $Friday; ?>, <?php echo $Saturday; ?>, <?php echo $Sunday; ?>)">
@@ -89,7 +88,7 @@ foreach ($rs as $risultato){
     if ($_SESSION['authorized']){
         ?>
 
-    <form name="user" action="index.php?action=save-report" method="post">
+    <form name="user" action="javascript:validate(<?php echo $risultato['seats']?>)" method="post">
         <div class="form-group"><label for="report">Quante persone ci sono secondo te? </label><br><input type="number" id="report" name="report"  maxlength="180"  style="width: 5%" class="form-control" required ></div><br>
 
         <button class="btn btn-primary">Invia</button>

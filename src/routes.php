@@ -1,7 +1,7 @@
 <?php
 $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : 'homepage';
 //echo substr($action, 0, 3);
-
+//echo substr($action, 0, 11);
 
 switch ($action){
     case 'homepage':
@@ -63,8 +63,12 @@ switch ($action){
     case 'update-bar':
         require('../src/controller/updateBar.php');
         break;
-    case 'save-report':
+    case substr($action, 0, 11) == 'save-report':
         require('../src/controller/saveReport.php');
+        global $report;
+        $report =  substr($action, 12, strlen($action));
+        report($report);
+
         break;
     case substr($action, 0, 11) == 'report-list':
         require('../src/controller/reportList.php');
