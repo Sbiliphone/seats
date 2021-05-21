@@ -16,7 +16,7 @@ require('../templates/menu.php');
     <div class="d-flex">
         <h3>Utenti</h3>
 
-        <a href="index.php?action=new-user" class="btn btn-primary btn-sm ms-auto my-auto">Crea utente</a>
+        <a href="index.php?action=new-user" class="btn btn-outline-primary btn-sm ms-auto my-auto">Crea utente</a>
     </div>
 
     <div class="table-responsive">
@@ -45,7 +45,7 @@ require('../templates/menu.php');
                             }else{
                             echo "No";
                             }?></td>
-                        <td><form method="post" action="index.php?action=delete-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Elimina</button>
+                        <td><form method="post" action="index.php?action=delete-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-outline-primary" type="submit">Elimina</button>
                         </form></td>
                         <td><form method="post" action="index.php?action=modify-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Modifica</button>
                         </form></td>

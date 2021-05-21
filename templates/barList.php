@@ -20,7 +20,7 @@ require('../templates/menu.php');
 
         <h3>Bar</h3>
 
-        <a href="index.php?action=new-bar" class="btn btn-primary btn-sm ms-auto my-auto">Aggiungi Bar</a>
+        <a href="index.php?action=new-bar" class="btn btn-outline-primary btn-sm ms-auto my-auto">Aggiungi Bar</a>
     </div>
 
     <div class="table-responsive">
@@ -43,7 +43,7 @@ require('../templates/menu.php');
                     <td><?php echo $risultato['address'];?></td>
                     <td><?php echo $risultato['city'];?></td>
                     <td><?php echo $risultato['seats'];?></td>
-                    <td><form method="post" action="index.php?action=delete-bar"><input type="hidden" id="bar" name="bar" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Elimina</button>
+                    <td><form method="post" action="index.php?action=delete-bar"><input type="hidden" id="bar" name="bar" value="<?php echo $risultato["id"];?>"><button class="btn btn-outline-primary" type="submit">Elimina</button>
                         </form></td>
                     <td><form method="post" action="index.php?action=modify-bar"><input type="hidden" id="bar" name="bar" value="<?php echo $risultato["id"];?>"><button class="btn btn-primary" type="submit">Modifica</button>
                         </form></td>
