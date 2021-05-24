@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 20, 2021 at 10:50 AM
+-- Generation Time: May 24, 2021 at 04:28 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -152,7 +152,7 @@ ALTER TABLE `Bar`
 -- AUTO_INCREMENT for table `Report`
 --
 ALTER TABLE `Report`
-    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `User`

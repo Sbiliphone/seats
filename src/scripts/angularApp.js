@@ -1,6 +1,5 @@
 var arrayBar = new Array();
 var app = angular.module('app', []);
-console.log("ciao");
 
 app.controller('ctrl1', function ($scope){
     $.get(
@@ -9,9 +8,13 @@ app.controller('ctrl1', function ($scope){
             arrayBar = JSON.parse(data);
             $scope.$apply(function() {
                 $scope.bars = arrayBar;
-                console.log(arrayBar);
+                console.log($scope.bars);
+                for (i=0; i<$scope.bars.length; i++){
+                    $scope.bars[i].percent = $scope.bars[i].used/$scope.bars[i].seats*100;
+                }
                 $scope.filterCondition = {
-                    nome: 'Name'
+                    nome: 'Name',
+                    seats: 'Seats'
                 }
             });
         });
@@ -42,6 +45,10 @@ app.controller('ctrl1', function ($scope){
     $scope.apriPagina = function (item) {
         console.log('index.php?action=bar'+item);
         location.href = 'index.php?action=bar'+item;
+    }
+
+    function percentuale(item1, item2){
+        return ciao;
     }
 
 });
