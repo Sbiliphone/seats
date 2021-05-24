@@ -13,8 +13,8 @@ require('../templates/menu.php');
             </ul>
         </div>
     </div>
-    </body>
-</html>
+
+
 
     <script src="../src/scripts/angularApp.js">
     </script>

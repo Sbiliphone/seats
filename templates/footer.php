@@ -21,7 +21,7 @@
 </script>
 
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+<div class="text-center text-lg-start bg-light text-muted footer">
 
     <center>
         <br>
@@ -40,5 +40,6 @@
         © 2021 Copyright
     </div>
     <!-- Copyright -->
-</footer>
+</div>
+</body>
 <!-- Footer -->
