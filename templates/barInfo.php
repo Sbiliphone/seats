@@ -75,9 +75,15 @@ foreach ($rs as $risultato){
 <body onload="graphic(<?php echo $Monday; ?>, <?php echo $Tuesday; ?>, <?php echo $Wednesday; ?>, <?php echo $Thursday; ?>, <?php echo $Friday; ?>, <?php echo $Saturday; ?>, <?php echo $Sunday; ?>)">
 <div class="container">
     <br>
-    <h1><?php echo $risultato['name']; ?></h1><br>
-    <p class="font-weight-normal"><?php echo $risultato['address']; echo ", "; echo $risultato['city']; ?></p>
-    <p class="font-weight-normal">Posti a sedere totali: <b><?php echo $risultato['seats']; ?></b></p>
+    <div class="col">
+        <h1><?php echo $risultato['name']; ?></h1><br>
+        <p class="font-weight-normal">Orari: <?php echo $risultato['timetables'];?></p>
+        <p class="font-weight-normal"><?php echo $risultato['address']; echo ", "; echo $risultato['city']; ?></p>
+        <p class="font-weight-normal">Posti a sedere totali: <b><?php echo $risultato['seats']; ?></b></p>
+    </div>
+    <div class="col">
+        
+    </div>
     <br>
         <div class="d-flex" style="display: flex">
             <div id="chart-area" class="col-4" ></div><div class="col-4"></div>

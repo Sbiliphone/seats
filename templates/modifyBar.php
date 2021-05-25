@@ -35,6 +35,9 @@ foreach($rs as $risultato){
                     <div class="form-group"><label for="user_lastname">Longitudine</label><input type="text" id="longitude" name="longitude" class="form-control" value="<?php echo $risultato['longitude'];?>"></div>
                 </div>
                 <div class="col-md mb-3">
+                    <div class="form-group"><label for="user_lastname">Orari</label><input type="text" id="timetables" name="timetables" class="form-control" value="<?php echo $risultato['timetables'];?>"></div>
+                </div>
+                <div class="col-md mb-3">
                     <div class="form-group"><label for="user_lastname">Posti</label><input type="text" id="seats" name="seats" class="form-control" value="<?php echo $risultato['seats'];?>"></div>
                 </div>
             </div>

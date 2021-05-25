@@ -1,6 +1,5 @@
 <?php
 function report($report){
-    echo "ciao";
     global $db;
     $day= date("l");
     $date = date("y-m-d h:i:s");

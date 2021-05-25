@@ -30,6 +30,7 @@ require('../templates/menu.php');
                 <th>Nome</th>
                 <th>Indirizzo</th>
                 <th>Città</th>
+                <th>Orari</th>
                 <th>Posti a sedere</th>
                 <th></th>
             </tr>
@@ -42,6 +43,7 @@ require('../templates/menu.php');
                     <td><?php echo $risultato['name'];?></td>
                     <td><?php echo $risultato['address'];?></td>
                     <td><?php echo $risultato['city'];?></td>
+                    <td><?php echo $risultato['timetables'];?></td>
                     <td><?php echo $risultato['seats'];?></td>
                     <td><form method="post" action="index.php?action=delete-bar"><input type="hidden" id="bar" name="bar" value="<?php echo $risultato["id"];?>"><button class="btn btn-outline-primary" type="submit">Elimina</button>
                         </form></td>
