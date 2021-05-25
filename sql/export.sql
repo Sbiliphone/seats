@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 20, 2021 at 10:50 AM
+-- Generation Time: May 25, 2021 at 08:52 AM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -59,33 +59,38 @@ CREATE TABLE `Report` (
                           `id` int(250) NOT NULL,
                           `used` int(250) NOT NULL,
                           `day` varchar(250) NOT NULL,
-                          `hour` varchar(250) NOT NULL,
                           `bar` int(250) NOT NULL,
                           `user` int(250) NOT NULL,
-                          `fullDate` varchar(250) NOT NULL
+                          `fullDate` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `Report`
 --
 
-INSERT INTO `Report` (`id`, `used`, `day`, `hour`, `bar`, `user`, `fullDate`) VALUES
-(1, 23, 'Monday', '12:30', 7, 1, '17/05/21'),
-(4, 23, 'Saturday', '08:51', 5, 1, '15/05/21'),
-(5, 34, 'Saturday', '10:19', 7, 2, '15/05/21'),
-(6, 14, 'Saturday', '10:19', 6, 2, '15/05/21'),
-(7, 25, 'Saturday', '10:19', 2, 2, '15/05/21'),
-(8, 56, 'Saturday', '10:19', 1, 2, '15/05/21'),
-(9, 56, 'Saturday', '10:19', 2, 1, '15/05/21'),
-(10, 22, 'Saturday', '10:19', 7, 1, '15/05/21'),
-(11, 45, 'Saturday', '10:45', 1, 1, '15/05/21'),
-(12, 23, 'Saturday', '10:54', 1, 1, '15/05/21'),
-(13, 12, 'Tuesday', '23:49', 1, 1, '18/05/21'),
-(14, 24, 'Wednesday', '22:04', 2, 2, '19/05/21'),
-(19, 13, 'Thursday', '12:14', 8, 1, '20/05/21'),
-(20, 23, 'Thursday', '12:16', 8, 1, '20/05/21'),
-(24, 45, 'Thursday', '12:36', 8, 1, '20/05/21'),
-(25, 13, 'Thursday', '12:36', 8, 1, '20/05/21');
+INSERT INTO `Report` (`id`, `used`, `day`, `bar`, `user`, `fullDate`) VALUES
+(1, 11, 'Monday', 7, 1, '2021-05-03 12:30:00.000000'),
+(4, 4, 'Saturday', 5, 1, '2021-05-15 08:51:00.000000'),
+(5, 12, 'Saturday', 7, 2, '2021-05-22 10:19:00.000000'),
+(6, 7, 'Saturday', 6, 2, '2021-05-22 10:19:30.000000'),
+(7, 18, 'Saturday', 2, 2, '2021-05-22 10:19:00.000000'),
+(8, 15, 'Saturday', 1, 2, '2021-05-01 10:19:00.000000'),
+(9, 18, 'Friday', 2, 1, '2021-05-07 10:19:00.000000'),
+(10, 22, 'Wednesday', 7, 1, '2021-05-12 10:19:00.000000'),
+(11, 8, 'Wednesday', 1, 1, '2021-05-19 10:45:00.000000'),
+(12, 10, 'Thursday', 1, 1, '2021-05-13 10:54:00.000000'),
+(13, 12, 'Tuesday', 1, 1, '2021-05-18 23:49:00.000000'),
+(14, 17, 'Wednesday', 2, 2, '2021-05-12 22:04:00.000000'),
+(19, 13, 'Friday', 8, 1, '2021-05-21 12:14:00.000000'),
+(20, 4, 'Sunday', 8, 1, '2021-05-09 12:16:00.000000'),
+(24, 11, 'Sunday', 8, 1, '2021-05-09 12:36:30.000000'),
+(27, 12, 'Friday', 9, 2, '2021-05-14 10:17:21.000000'),
+(28, 15, 'Saturday', 9, 1, '2021-05-22 10:17:21.000000'),
+(29, 26, 'Monday', 10, 2, '2021-05-16 10:18:49.000000'),
+(30, 12, 'Tuesday', 10, 1, '2021-05-25 10:18:49.000000'),
+(31, 3, 'Monday', 11, 1, '2021-05-10 10:20:59.000000'),
+(32, 6, 'Wednesday', 12, 1, '2021-05-12 10:20:59.000000'),
+(33, 12, 'Tuesday', 2, 1, '2021-05-25 10:24:32.000000');
 
 -- --------------------------------------------------------
 
@@ -152,7 +157,7 @@ ALTER TABLE `Bar`
 -- AUTO_INCREMENT for table `Report`
 --
 ALTER TABLE `Report`
-    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `User`

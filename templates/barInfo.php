@@ -22,44 +22,44 @@ $bar = $_SESSION['idBar'];
     $rs = $db->execute($sql);
 
     $attualMounth = date("m");
-    $sqlMonday = "SELECT AVG(used) FROM Report WHERE day='Monday' AND fullDate LIKE '%/$attualMounth/%' AND bar='$bar';";
+    $sqlMonday = "SELECT AVG(used) FROM Report WHERE day='Monday' AND fullDate LIKE '%-$attualMounth-%' AND bar='$bar';";
     $rsMonday = $db->execute($sqlMonday);
     foreach ($rsMonday as $risultatoMonday){
         echo $risultatoMonday['AVG(used)'];
         $Monday = (int)$risultatoMonday['AVG(used)'];
     }
 
-    $sqlTuesday = "SELECT AVG(used) FROM Report WHERE day='Tuesday' AND fullDate LIKE '%/$attualMounth/%' AND bar='$bar';";
+    $sqlTuesday = "SELECT AVG(used) FROM Report WHERE day='Tuesday' AND fullDate LIKE '%-$attualMounth-%' AND bar='$bar';";
     $rsTuesday = $db->execute($sqlTuesday);
     foreach ($rsTuesday as $risultatoTuesday){
         $Tuesday = (int)$risultatoTuesday['AVG(used)'];
     }
 
-    $sqlWednesday = "SELECT AVG(used) FROM Report WHERE day='Wednesday' AND fullDate LIKE '%/$attualMounth/%' AND bar='$bar';";
+    $sqlWednesday = "SELECT AVG(used) FROM Report WHERE day='Wednesday' AND fullDate LIKE '%-$attualMounth-%' AND bar='$bar';";
     $rsWednesday = $db->execute($sqlWednesday);
     foreach ($rsWednesday as $risultatoWednesday){
         $Wednesday = (int)$risultatoWednesday['AVG(used)'];
     }
 
-    $sqlThursday = "SELECT AVG(used) FROM Report WHERE day='Thursday' AND fullDate LIKE '%/$attualMounth/%' AND bar='$bar';";
+    $sqlThursday = "SELECT AVG(used) FROM Report WHERE day='Thursday' AND fullDate LIKE '%-$attualMounth-%' AND bar='$bar';";
     $rsThursday = $db->execute($sqlThursday);
     foreach ($rsThursday as $risultatoThursday){
         $Thursday = (int)$risultatoThursday['AVG(used)'];
     }
 
-    $sqlFriday = "SELECT AVG(used) FROM Report WHERE day='Friday' AND fullDate LIKE '%/$attualMounth/%' AND bar='$bar';";
+    $sqlFriday = "SELECT AVG(used) FROM Report WHERE day='Friday' AND fullDate LIKE '%-$attualMounth-%' AND bar='$bar';";
     $rsFriday = $db->execute($sqlFriday);
     foreach ($rsFriday as $risultatoFriday){
         $Friday = (int)$risultatoFriday['AVG(used)'];
     }
 
-    $sqlSaturday = "SELECT used FROM Report WHERE day='Saturday' AND fullDate LIKE '%/$attualMounth/%' AND bar='$bar';";
+    $sqlSaturday = "SELECT AVG(used) FROM Report WHERE day='Saturday' AND fullDate LIKE '%-$attualMounth-%' AND bar='$bar';";
     $rsSaturday = $db->execute($sqlSaturday);
     foreach ($rsSaturday as $risultatoSaturday){
         $Saturday = (int)$risultatoSaturday['AVG(used)'];
     }
 
-    $sqlSunday = "SELECT AVG(used) FROM Report WHERE day='Sunday' AND fullDate LIKE '%/$attualMounth/%' AND bar='$bar';";
+    $sqlSunday = "SELECT AVG(used) FROM Report WHERE day='Sunday' AND fullDate LIKE '%-$attualMounth-%' AND bar='$bar';";
     $rsSunday = $db->execute($sqlSunday);
     foreach ($rsSunday as $risultatoSunday){
         $Sunday = (int)$risultatoSunday['AVG(used)'];

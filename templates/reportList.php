@@ -26,9 +26,6 @@ require('../templates/menu.php');
     }else if($_SESSION['order'] == "bar"){
         $sql = "SELECT * FROM Report ORDER BY bar";
         $rs = $db->execute($sql);
-    }else if($_SESSION['order'] == "hour"){
-        $sql = "SELECT * FROM Report ORDER BY hour";
-        $rs = $db->execute($sql);
     }
     ?>
 
@@ -48,7 +45,6 @@ require('../templates/menu.php');
                 <th>Posti usati</th>
                 <th>Giorno settimana</th>
                 <th>Data</th>
-                <th>Ora</th>
                 <th>Bar</th>
                 <th>User</th>
                 <th></th>
@@ -59,7 +55,6 @@ require('../templates/menu.php');
                 <option value="default" <?php if($_SESSION['order'] == 'default'){echo ("selected");} ?>>Riordina per:</option>
                 <option value="used" <?php if($_SESSION['order'] == 'used'){echo ("selected");} ?>>Posti a sedere</option>
                 <option value="date" <?php if($_SESSION['order'] == 'date'){echo ("selected");} ?>>Data</option>
-                <option value="hour" <?php if($_SESSION['order'] == 'hour'){echo ("selected");} ?>>Ora</option>
                 <option value="day" <?php if($_SESSION['order'] == 'day'){echo ("selected");} ?>>Giorno</option>
                 <option value="bar" <?php if($_SESSION['order'] == 'bar'){echo ("selected");} ?>>Bar</option>
                 <option value="user" <?php if($_SESSION['order'] == 'user'){echo ("selected");} ?>>User</option>
@@ -73,7 +68,6 @@ require('../templates/menu.php');
                     <td><?php echo $risultato['used'];?></td>
                     <td><?php echo $risultato['day'];?></td>
                     <td><?php echo $risultato['fullDate'];?></td>
-                    <td><?php echo $risultato['hour'];?></td>
                     <td>
                         <div style="display: none">
                         <?php  $bar = $risultato['bar'];

@@ -6,7 +6,6 @@ body{
     background: url("https://images.unsplash.com/photo-1454117096348-e4abbeba002c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
 }
 .footer{
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -31,3 +30,5 @@ body{
 }
 
 .btn-primary.dropdown-toggle{color:#ff9b29;background-color:#ff9b29;border-color:#ff9b29}
+
+.progress-bar{background-color: #fc791e}
