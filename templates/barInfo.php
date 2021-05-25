@@ -15,9 +15,6 @@ $bar = $_SESSION['idBar'];
     $Saturday = 0;
     $Sunday = 0;
 
-    $sql = "SELECT * FROM Bar;";
-    $rs = $db->execute($sql);
-    global $db;
     $sql="SELECT * FROM Bar WHERE id='$bar';";
     $rs = $db->execute($sql);
 
@@ -85,10 +82,10 @@ foreach ($rs as $risultato){
         
     </div>
     <br>
-        <div class="d-flex" style="display: flex">
-            <div id="chart-area" class="col-4" ></div><div class="col-4"></div>
-            <div class="col-4" "><iframe width="500" height="500" src="https://maps.google.com/maps?q=<?php echo $risultato['latitude']; ?>,<?php echo $risultato['longitude']; ?>&output=embed"></iframe></div>
-        </div>
+    <div class="d-flex" style="display: flex">
+        <div id="chart-area" class="col-4" ></div><div class="col-4" style="width: 28%;"></div>
+        <div class="col-4"><iframe width="501" height="501" src="https://maps.google.com/maps?q=<?php echo $risultato['latitude']; ?>, <?php echo $risultato['longitude']; ?>&output=embed"></iframe></div>
+</div>
 <hr>
     <?php
     if ($_SESSION['authorized']){
