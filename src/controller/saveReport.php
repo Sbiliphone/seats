@@ -3,7 +3,7 @@ function report($report){
     echo "ciao";
     global $db;
     $day= date("l");
-    $date = date("d-m-y h:i:s");
+    $date = date("y-m-d h:i:s");
     $user=$_SESSION['idUser'];
     $bar=$_SESSION['idBar'];
 
