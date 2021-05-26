@@ -12,7 +12,7 @@
 
     function validate(seats){
         report = document.getElementById("report").value;
-        if(parseInt(report) > parseInt(seats)){
+        if(parseInt(report) > parseInt(seats) || parseInt(report) < 0){
             alert("Valore inserito non valido");
         }else {
             location.href="index.php?action=save-report-" + report;
