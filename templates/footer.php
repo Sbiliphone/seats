@@ -28,7 +28,11 @@
         <p><i class="bi bi-person-fill"></i></i> Ligugnana Alessandro</p>
         <p>
             <i class="bi bi-mailbox"></i>
-            alessandro.ligugnana@gmail.com
+            <a href="mailto:alessandro.ligugnana@gmail.com">alessandro.ligugnana@gmail.com</a>
+        </p>
+        <p>
+            <i class="bi bi-github"></i>
+            <a href="https://github.com/Sbiliphone">Git Sbiliphone</a>
         </p>
         <p><i class="bi bi-phone"></i></i> +39 331 276 1217</p>
     </center>

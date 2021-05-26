@@ -121,6 +121,18 @@ $bar = $_SESSION['idBar'];
     foreach ($rsSundayS as $risultatoSundayS){
         $SundayS = (int)$risultatoSundayS['AVG(used)'];
     }
+
+    $sqlLastReport = "SELECT R1.used, R1.fullDate,
+FROM Report R1 JOIN (SELECT bar, MAX(fullDate) AS fullDate
+FROM Report
+GROUP BY bar) R2 
+ON R1.bar=R2.bar AND R1.fullDate=R2.fullDate JOIN Bar ON R1.bar=Bar.id
+WHERE R1.bar='$bar'";
+    $rsLastReport = $db->execute($sqlLastReport);
+    foreach ($rsLastReport as $risultatoLastReport){
+        $lastReport = $risultatoLastReport['R1.used'];
+        $lastReportDate = $risultatoLastReport['R1.fullDate'];
+    }
 ?>
 
 </div>
@@ -133,7 +145,10 @@ foreach ($rs as $risultato){
 <div class="container">
     <br>
     <div class="col">
-        <nobr><span class="h1"><?php echo $risultato['name']; ?> </span><img style="margin-bottom: 1%" src="https://img.icons8.com/windows/32/000000/martini-glass.png"/></nobr><br>
+        <div class="container">
+            <div class="col-4"><nobr><span class="h1"><?php echo $risultato['name']; ?> </span><img style="margin-bottom: 1%" src="https://img.icons8.com/windows/32/000000/martini-glass.png"/></nobr></div>
+            <div class="col-4"><span class="h5">Posti attualmente occupati:</span><span class="h5"><?php echo $lastReport ?></span><span class="font-weight-normal"><?php echo $lastReportDate ?></span></div>
+        </div>
         <i class="bi bi-clock"></i><span class="font-weight-normal">  Orari: <?php echo $risultato['timetables'];?></span><br>
         <i class="bi bi-geo-alt"></i><span class="font-weight-normal">  <?php echo $risultato['address']; echo ", "; echo $risultato['city']; ?></span><br><br>
         <p class="font-weight-normal">Posti a sedere totali: <b><?php echo $risultato['seats']; ?></b></p>
@@ -153,6 +168,7 @@ foreach ($rs as $risultato){
 <hr>
 
     <script type="text/javascript">
+
         var map = new ol.Map({
             target: 'map',
             layers: [
