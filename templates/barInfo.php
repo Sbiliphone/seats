@@ -3,6 +3,14 @@ require('../templates/header.php');
 require('../templates/menu.php');
 $bar = $_SESSION['idBar'];
 ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <style>
+        .map {
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
 <div style="display: none">
 <?php
 
@@ -140,9 +148,24 @@ foreach ($rs as $risultato){
     </div>
     <div class="d-flex" style="display: flex;">
         <div id="chart-area" class="col-1" ></div><div class="col-5"></div>
-        <div class="col-1" ><iframe width="501" height="501" src="https://maps.google.com/maps?q=<?php echo $risultato['latitude']; ?>, <?php echo $risultato['longitude']; ?>&output=embed"></iframe></div>
+        <div class="col-1" ><div id="map" class="map"></div></div>
 </div>
 <hr>
+
+    <script type="text/javascript">
+        var map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([<?php echo $risultato['longitude']; ?>, <?php echo $risultato['latitude']; ?>]),
+                zoom: 17
+            })
+        });
+    </script>
     <?php
     if ($_SESSION['authorized']){
         ?>
@@ -154,6 +177,7 @@ foreach ($rs as $risultato){
         <input type="hidden" id="user__token" name="user[_token]" value="">
         <br>
     </form>
+
 
         <?php
     }else{
