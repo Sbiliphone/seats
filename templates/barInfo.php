@@ -145,10 +145,8 @@ foreach ($rs as $risultato){
 <div class="container">
     <br>
     <div class="col">
-        <div class="row">
-            <div class="col-4"><nobr><span class="h1"><?php echo $risultato['name']; ?> </span><img style="margin-bottom: 1%" src="https://img.icons8.com/windows/32/000000/martini-glass.png"/></nobr></div>
-            <div class="col-4" style=""><span class="h5">Posti attualmente occupati: </span><span class="h5">    <?php echo $lastReport ?></span><span class="font-weight-normal"> ore:  <?php echo substr($lastReportDate, 11, 5) ?></span></div>
-        </div>
+        <div class="col-4"><span class="h1"><?php echo $risultato['name']; ?></div><br>
+        <div class="col-4"><span class="h5">Posti attualmente occupati: </span><span class="h5">    <?php echo $lastReport ?></span><span class="font-weight-normal"> ore:  <?php echo substr($lastReportDate, 11, 5) ?></span></div><br>
         <i class="bi bi-clock"></i><span class="font-weight-normal">  Orari: <?php echo $risultato['timetables'];?></span><br>
         <i class="bi bi-geo-alt"></i><span class="font-weight-normal">  <?php echo $risultato['address']; echo ", "; echo $risultato['city']; ?></span><br><br>
         <p class="font-weight-normal">Posti a sedere totali: <b><?php echo $risultato['seats']; ?></b></p>

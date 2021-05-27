@@ -21,29 +21,22 @@
 </script>
 
 <!-- Footer -->
-<div class="text-center text-lg-start bg-light text-muted footer">
+<footer class="text-center text-lg-start bg-light text-muted footer" style="position: absolute; bottom: 0; width: 100%; height: 10%;">
 
     <center>
         <br>
-        <p><i class="bi bi-person-fill"></i></i> Ligugnana Alessandro</p>
-        <p>
+        <span>
             <i class="bi bi-mailbox"></i>
             <a href="mailto:alessandro.ligugnana@gmail.com">alessandro.ligugnana@gmail.com</a>
-        </p>
-        <p>
+        </span>
+        <span>
             <i class="bi bi-github"></i>
             <a href="https://github.com/Sbiliphone">Git Sbiliphone</a>
-        </p>
-        <p><i class="bi bi-phone"></i></i> +39 331 276 1217</p>
+        </span>
+        <span><i class="bi bi-phone"></i></i> +39 331 276 1217</span>
     </center>
 
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2021 Copyright
-    </div>
-    <!-- Copyright -->
+</footer>
 </div>
 </body>
 <!-- Footer -->
