@@ -30,8 +30,8 @@ require('../templates/menu.php');
     ?>
 
 </div>
-
-<div class="container">
+<div style="position: relative; min-height: 100vh;">
+<div class="container paddingFooter">
     <br>
     <div class="d-flex">
         <h3>Report</h3>

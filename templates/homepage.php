@@ -6,7 +6,7 @@ require('../templates/menu.php');
 
     <body ng-app="app">
     <div style="position: relative; min-height: 100vh;">
-        <div ng-controller="ctrl1" class="container" style="height: 100%; overflow: auto; padding-bottom: 10%;"><br>
+        <div ng-controller="ctrl1" class="container paddingFooter" style=""><br>
             <div class=".col-md-6 .col-md-offset-3"><input type="text" id="barra-ricerca" onkeyup="ricerca()" placeholder="Cerca" class="form-control"></div><br>
             <div class="overflow-auto">
                 <ul id="elenco" type="none">

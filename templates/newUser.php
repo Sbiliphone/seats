@@ -36,8 +36,8 @@ require('../templates/menu.php');
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
 
 </head>
-
-<div class="container">
+<div style="position: relative; min-height: 100vh;">
+<div class="container paddingFooter">
     <h3>Crea nuovo utente</h3>
 
     <form name="user" action="index.php?action=save-user" method="post">

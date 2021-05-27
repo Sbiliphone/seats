@@ -13,8 +13,8 @@ require('../templates/menu.php');
     ?>
 
 </div>
-
-<div class="container">
+<div style="position: relative; min-height: 100vh;">
+<div class="container paddingFooter">
     <br>
     <div class="d-flex">
 
@@ -59,6 +59,7 @@ require('../templates/menu.php');
         </table>
     </div>
 </div>
+
 
 <?php
 require('../templates/footer.php');

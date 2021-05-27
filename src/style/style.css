@@ -25,3 +25,8 @@ body{
 .btn-primary.dropdown-toggle{color:#ff9b29;background-color:#ff9b29;border-color:#ff9b29}
 
 .progress-bar{background-color: #fc791e}
+
+.paddingFooter{
+    padding-bottom: 15%;
+    height: 100%; overflow: auto;
+}

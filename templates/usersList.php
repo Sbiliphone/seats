@@ -10,8 +10,8 @@ require('../templates/menu.php');
     $rs = $db->execute($sql);
     ?>
 </div>
-
-<div class="container">
+<div style="position: relative; min-height: 100vh;">
+<div class="container paddingFooter">
     <br>
     <div class="d-flex">
         <h3>Utenti</h3>

@@ -4,8 +4,8 @@ require('../templates/header.php');
 <?php
 require('../templates/menu.php');
 ?>
-
-    <div class="container">
+    <div style="position: relative; min-height: 100vh;">
+    <div class="container paddingFooter">
         <form method="post" action="index.php?action=set-password">
             <!-- TODO: add names in inputs -->
             <h3>Cambia password</h3>

@@ -142,7 +142,8 @@ foreach ($rs as $risultato){
     //https://www.chartjs.org/docs/latest/
 ?>
 <body onload="graphic(<?php echo $Monday; ?>, <?php echo $Tuesday; ?>, <?php echo $Wednesday; ?>, <?php echo $Thursday; ?>, <?php echo $Friday; ?>, <?php echo $Saturday; ?>, <?php echo $Sunday; ?>, <?php echo $MondayS; ?>, <?php echo $TuesdayS; ?>, <?php echo $WednesdayS; ?>, <?php echo $ThursdayS; ?>, <?php echo $FridayS; ?>, <?php echo $SaturdayS; ?>, <?php echo $SundayS; ?>)">
-<div class="container">
+<div style="position: relative; min-height: 100vh;">
+<div class="container paddingFooter">
     <br>
     <div class="col">
         <div class="col-4"><span class="h1"><?php echo $risultato['name']; ?></div><br>
@@ -207,7 +208,6 @@ foreach ($rs as $risultato){
 
 <script src="../src/scripts/graphic.js"></script>
 
-</body>
 
 
 <?php

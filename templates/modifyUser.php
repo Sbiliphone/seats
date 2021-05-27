@@ -16,7 +16,8 @@ $id=$_REQUEST['user'];
 
 foreach($rs as $risultato){
     ?>
-    <div class="container">
+    <div style="position: relative; min-height: 100vh;">
+    <div class="container paddingFooter">
         <form name="user" action="index.php?action=update-user" method="post">
             <div class="row">
                 <div class="col-md-6 mb-3">
