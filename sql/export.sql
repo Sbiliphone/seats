@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 26, 2021 at 08:16 AM
+-- Generation Time: May 28, 2021 at 08:56 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -116,9 +116,7 @@ INSERT INTO `Report` (`id`, `used`, `day`, `bar`, `user`, `fullDate`) VALUES
 (54, 10, 'Tuesday', 16, 1, '2021-05-25 03:58:40.000000'),
 (55, 10, 'Tuesday', 16, 1, '2021-05-25 03:58:46.000000'),
 (56, 17, 'Tuesday', 16, 1, '2021-05-25 03:58:53.000000'),
-(57, 6, 'Tuesday', 16, 1, '2021-05-25 03:59:04.000000'),
-(58, 12, 'Monday', 13, 1, '2021-04-05 09:07:41.000000'),
-(59, 21, 'Saturday', 13, 2, '2021-04-17 09:07:41.000000');
+(57, 6, 'Tuesday', 16, 1, '2021-05-25 03:59:04.000000');
 
 -- --------------------------------------------------------
 
@@ -141,8 +139,9 @@ CREATE TABLE `User` (
 --
 
 INSERT INTO `User` (`id`, `username`, `password`, `isAdmin`, `email`, `name`, `lastname`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'admin@admin.com', 'Alessandro', 'Ligugnana'),
-(2, 'pippo', '0c88028bf3aa6a6a143ed846f2be1ea4', 0, 'pippo@gmail.com', 'Filippo', 'Inzaghi');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'admin@admin.com', 'Alessandroo', 'Ligugnana'),
+(2, 'pippo', '0c88028bf3aa6a6a143ed846f2be1ea4', 0, 'pippo@gmail.com', 'Filippo', 'Inzaghi'),
+(3, 'rossi', '4b1838af20e7dbeca2634162da6c8387', 0, 'mario.rossi@gmail', 'Mario', 'Rossi');
 
 --
 -- Indexes for dumped tables
@@ -183,13 +182,13 @@ ALTER TABLE `Bar`
 -- AUTO_INCREMENT for table `Report`
 --
 ALTER TABLE `Report`
-    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

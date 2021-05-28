@@ -4,13 +4,6 @@ require('../templates/menu.php');
 $bar = $_SESSION['idBar'];
 ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
-    <style>
-        .map {
-            height: 500px;
-            width: 500px;
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
 <div style="display: none">
 <?php
 
@@ -147,7 +140,7 @@ foreach ($rs as $risultato){
     <br>
     <div class="col">
         <div class="col-4"><span class="h1"><?php echo $risultato['name']; ?></div><br>
-        <div class="col-4"><span class="h5">Posti attualmente occupati: </span><span class="h5">    <?php echo $lastReport ?></span><span class="font-weight-normal"> ore:  <?php echo substr($lastReportDate, 11, 5) ?></span></div><br>
+        <div class="col-5"><span class="h5">Posti attualmente occupati: </span><span class="h5">    <?php echo $lastReport ?></span><span class="font-weight-normal"> ore:  <?php echo substr($lastReportDate, 11, 5) ?> del: <?php echo substr($lastReportDate, 8, 2)?>/<?php echo substr($lastReportDate, 5, 2)?>/<?php echo substr($lastReportDate, 2, 2)?></span></div><br>
         <i class="bi bi-clock"></i><span class="font-weight-normal">  Orari: <?php echo $risultato['timetables'];?></span><br>
         <i class="bi bi-geo-alt"></i><span class="font-weight-normal">  <?php echo $risultato['address']; echo ", "; echo $risultato['city']; ?></span><br><br>
         <p class="font-weight-normal">Posti a sedere totali: <b><?php echo $risultato['seats']; ?></b></p>
@@ -157,29 +150,31 @@ foreach ($rs as $risultato){
     </div>
     <br>
     <div class="d-flex" style="display: flex;">
-        <div class="col-1" ></div><div class="col-5"></div>
-        <div class="col-1" ></div>
     </div>
     <div class="d-flex" style="display: flex;">
         <div id="chart-area" class="col-1" ></div><div class="col-5"></div>
         <div class="col-1" ><div id="map" class="map"></div></div>
 </div>
 <hr>
-
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
     <script type="text/javascript">
+        map = new OpenLayers.Map("map");
+        map.addLayer(new OpenLayers.Layer.OSM());
 
-        var map = new ol.Map({
-            target: 'map',
-            layers: [
-                new ol.layer.Tile({
-                    source: new ol.source.OSM()
-                })
-            ],
-            view: new ol.View({
-                center: ol.proj.fromLonLat([<?php echo $risultato['longitude']; ?>, <?php echo $risultato['latitude']; ?>]),
-                zoom: 17
-            })
-        });
+        var lonLat = new OpenLayers.LonLat( <?php echo $risultato['longitude']?> ,<?php echo $risultato['latitude']?> )
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            );
+
+        var zoom=18;
+
+        var markers = new OpenLayers.Layer.Markers( "Markers" );
+        map.addLayer(markers);
+
+        markers.addMarker(new OpenLayers.Marker(lonLat));
+
+        map.setCenter (lonLat, zoom);
     </script>
     <?php
     if ($_SESSION['authorized']){

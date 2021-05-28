@@ -16,7 +16,7 @@
 
        $rs = $db->execute($sql);
 
-    header('Location:index.php?action=users-list');
+    header('Location:index.php?action=user-list');
 
     $hella = false;
 ?>

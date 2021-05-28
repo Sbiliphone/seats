@@ -30,3 +30,8 @@ body{
     padding-bottom: 15%;
     height: 100%; overflow: auto;
 }
+
+.map{
+    height: 500px;
+    width: 500px;
+}

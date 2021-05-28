@@ -7,10 +7,17 @@ function showForm()
 function setPassword()
 {
     global $db;
-    $nuovaPassword = md5($_REQUEST['password']);
+    $nuovaPassword1 = md5($_REQUEST['newPassword_first']);
+    $nuovaPassword2 = md5($_REQUEST['newPassword_second']);
 
-    $sql = "UPDATE User SET password='$nuovaPassword' WHERE username='" . $_SESSION['username'] . "'";
-    $rs = $db->execute($sql);
-    header('Location: index.php');
+    if ($nuovaPassword1 == $nuovaPassword2){
+        $sql = "UPDATE User SET password='$nuovaPassword1' WHERE username='" . $_SESSION['username'] . "'";
+        $rs = $db->execute($sql);
+        header('Location: index.php');
+    }else{
+        header('Location: index.php?action=change-password');
+    }
+
+
 }
 

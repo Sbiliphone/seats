@@ -30,6 +30,7 @@ require('../templates/menu.php');
     ?>
 
 </div>
+<body>
 <div style="position: relative; min-height: 100vh;">
 <div class="container paddingFooter">
     <br>
@@ -67,7 +68,7 @@ require('../templates/menu.php');
                 <tr>
                     <td><?php echo $risultato['used'];?></td>
                     <td><?php echo $risultato['day'];?></td>
-                    <td><?php echo $risultato['fullDate'];?></td>
+                    <td><?php echo substr($risultato['fullDate'], 0, 19);?></td>
                     <td>
                         <div style="display: none">
                         <?php  $bar = $risultato['bar'];

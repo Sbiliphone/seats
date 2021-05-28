@@ -11,11 +11,11 @@ require('../templates/menu.php');
             <h3>Cambia password</h3>
             <div class="mb-3">
                 <label for="newPassword_first" class="form-label">Nuova password</label>
-                <input type="password" class="form-control" id="newPassword_first">
+                <input type="password" class="form-control" id="newPassword_first" name="newPassword_first">
             </div>
             <div class="mb-3">
                 <label for="newPassword_second" class="form-label">Ripeti nuova password</label>
-                <input type="password" class="form-control" id="newPassword_second" name="password">
+                <input type="password" class="form-control" id="newPassword_second" name="newPassword_second">
             </div>
 
 

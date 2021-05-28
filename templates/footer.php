@@ -21,7 +21,7 @@
 </script>
 
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted footer" style="position: absolute; bottom: 0; width: 100%; height: 15%;">
+<footer class="text-center text-lg-start bg-light text-muted footer" style="position: absolute; bottom: 0; width: 100%; height: 150px;">
 
     <center>
         <br>

@@ -13,6 +13,7 @@ require('../templates/menu.php');
     ?>
 
 </div>
+<body>
 <div style="position: relative; min-height: 100vh;">
 <div class="container paddingFooter">
     <br>
