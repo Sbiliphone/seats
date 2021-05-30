@@ -27,7 +27,10 @@ foreach($rs as $risultato){
                     <div class="form-group"><label for="user_email" class="required">Email</label><input type="text" id="user_email" name="email" required="required" maxlength="180" class="form-control" value="<?php echo $risultato['email'];?>"></div>
                 </div>
                 <div class="col-12 mb-3">
-                    <div class="form-group"><label class="required" for="user_roles">Ruolo</label><select id="user_roles" name="roles" class="form-control"><option value="false" selected="<?php echo ($risultato["isAdmin"]==1) ?  "": "selected"; ?>">User</option><option value=1 selected="<?php echo ($risultato["isAdmin"]==1) ?  "selected": ""; ?>">Admin</option></select></div>
+                    <div class="form-group"><label class="required" for="user_roles">Ruolo</label><select id="user_roles" name="roles" class="form-control"><option value="0" <?php if ($risultato["isAdmin"]==0){?> selected <?php }?>>User</option><option value=1 <?php if ($risultato["isAdmin"]==1){?> selected <?php }?>>Admin</option></select></div>
+                </div>
+                <div class="col-12 mb-3">
+                    <div class="form-group"><label class="required" for="user_roles">Verificato</label><select id="verified" name="verified" class="form-control"><option value="0" <?php if ($risultato["isVerified"]==0){?> selected <?php }?>>Non verificato</option><option value=1 <?php if ($risultato["isVerified"]==1){?> selected <?php }?>>Verificato</option></select></div>
                 </div>
                 <div class="col-md mb-3">
                     <div class="form-group"><label for="user_firstname">Nome</label><input type="text" id="user_firstname" name="firstname" class="form-control" value="<?php echo $risultato['name'];?>"></div>

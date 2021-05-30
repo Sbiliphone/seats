@@ -28,6 +28,7 @@ require('../templates/menu.php');
                     <th>Nome</th>
                     <th>Cognome</th>
                     <th>Admin</th>
+                    <th>Verificato</th>
                     <th></th>
                 </tr>
             </thead>
@@ -44,6 +45,11 @@ require('../templates/menu.php');
                                 echo "Si";
                             }else{
                             echo "No";
+                            }?></td>
+                        <td><?php if ($risultato['isVerified'] == 1) {
+                                echo "Si";
+                            }else{
+                                echo "No";
                             }?></td>
                         <td><form method="post" action="index.php?action=delete-user"><input type="hidden" id="user" name="user" value="<?php echo $risultato["id"];?>"><button class="btn btn-outline-primary" type="submit">Elimina</button>
                         </form></td>

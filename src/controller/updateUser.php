@@ -4,21 +4,15 @@
     $firstname=$_REQUEST['firstname'];
     $lastname=$_REQUEST['lastname'];
     $email=$_REQUEST['email'];
-    $role=$_REQUEST['roles']; 
+    $role=$_REQUEST['roles'];
+    $verified=$_REQUEST['verified'];
     $id=$_REQUEST['id'];
 
-    if($role=='false'){
-       $role=0;
-    }else{
-        $role=1;
-    }
-       $sql="UPDATE User SET email='$email', name='$firstname', lastname='$lastname', isAdmin='$role' WHERE id='$id';";
-
-       $rs = $db->execute($sql);
+    $sql="UPDATE User SET email='$email', name='$firstname', lastname='$lastname', isAdmin='$role', isVerified='$verified' WHERE id='$id';";
+    $rs = $db->execute($sql);
 
     header('Location:index.php?action=user-list');
 
-    $hella = false;
 ?>
 
 

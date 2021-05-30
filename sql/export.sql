@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 28, 2021 at 08:56 PM
+-- Generation Time: May 30, 2021 at 02:45 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -49,7 +49,7 @@ INSERT INTO `Bar` (`id`, `seats`, `name`, `city`, `address`, `longitude`, `latit
 (13, 40, 'Italian Secret', 'Udine', 'Piazza Giacomo Matteotti 18', '13.233469175334342', '46.06340909818938', '7:00-24:00'),
 (14, 42, 'Osteria da Teresina', 'Udine', 'Via Paolo Sarpi 10/A', '13.23321606668251', '46.06438099764393', '8:00-23:00'),
 (15, 18, 'Caffè Enoteca Rialto', 'Udine', 'Via Rialto 12', '13.23395781356849', '46.06238804310243', '6:00-22:00'),
-(16, 17, 'Liberty', 'Udinedine', 'Via Mentana, Viaile del Ledra', '13.22681651820922', '46.064520074517546', '7:00-23:00');
+(16, 17, 'Liberty', 'Udine', 'Via Mentana, Viaile del Ledra', '13.22681651820922', '46.064520074517546', '7:00-23:00');
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,12 @@ INSERT INTO `Report` (`id`, `used`, `day`, `bar`, `user`, `fullDate`) VALUES
 (54, 10, 'Tuesday', 16, 1, '2021-05-25 03:58:40.000000'),
 (55, 10, 'Tuesday', 16, 1, '2021-05-25 03:58:46.000000'),
 (56, 17, 'Tuesday', 16, 1, '2021-05-25 03:58:53.000000'),
-(57, 6, 'Tuesday', 16, 1, '2021-05-25 03:59:04.000000');
+(57, 6, 'Tuesday', 16, 1, '2021-05-25 03:59:04.000000'),
+(58, 10, 'Sunday', 6, 1, '2021-05-30 03:04:48.000000'),
+(59, 12, 'Sunday', 2, 1, '2021-05-30 15:17:17.000000'),
+(60, 12, 'Sunday', 6, 1, '2021-05-30 15:17:38.000000'),
+(61, 6, 'Sunday', 6, 1, '2021-05-30 15:18:09.000000'),
+(62, 12, 'Sunday', 1, 3, '2021-05-30 16:44:44.000000');
 
 -- --------------------------------------------------------
 
@@ -131,17 +136,18 @@ CREATE TABLE `User` (
                         `isAdmin` tinyint(1) DEFAULT NULL,
                         `email` varchar(255) DEFAULT NULL,
                         `name` varchar(255) DEFAULT NULL,
-                        `lastname` varchar(255) DEFAULT NULL
+                        `lastname` varchar(255) DEFAULT NULL,
+                        `isVerified` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `User`
 --
 
-INSERT INTO `User` (`id`, `username`, `password`, `isAdmin`, `email`, `name`, `lastname`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'admin@admin.com', 'Alessandroo', 'Ligugnana'),
-(2, 'pippo', '0c88028bf3aa6a6a143ed846f2be1ea4', 0, 'pippo@gmail.com', 'Filippo', 'Inzaghi'),
-(3, 'rossi', '4b1838af20e7dbeca2634162da6c8387', 0, 'mario.rossi@gmail', 'Mario', 'Rossi');
+INSERT INTO `User` (`id`, `username`, `password`, `isAdmin`, `email`, `name`, `lastname`, `isVerified`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'admin@admin.com', 'Alessandro', 'Ligugnana', 1),
+(2, 'pippo', '0c88028bf3aa6a6a143ed846f2be1ea4', 0, 'pippo@gmail.com', 'Filippo', 'Inzaghi', 1),
+(3, 'rossi', '2bf65275cb7f5dc95febd7d46cd7d0af', 0, 'mario.rossi@gmail', 'Mario', 'Rossi', NULL);
 
 --
 -- Indexes for dumped tables
@@ -182,7 +188,7 @@ ALTER TABLE `Bar`
 -- AUTO_INCREMENT for table `Report`
 --
 ALTER TABLE `Report`
-    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+    MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `User`

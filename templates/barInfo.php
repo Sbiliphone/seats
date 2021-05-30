@@ -115,7 +115,7 @@ $bar = $_SESSION['idBar'];
         $SundayS = (int)$risultatoSundayS['AVG(used)'];
     }
 
-    $sqlLastReport = "SELECT R1.used, R1.fullDate
+    $sqlLastReport = "SELECT R1.used, R1.fullDate, R1.user
 FROM Report R1 JOIN (SELECT bar, MAX(fullDate) AS fullDate
 FROM Report
 GROUP BY bar) R2 
@@ -125,6 +125,12 @@ WHERE R1.bar='$bar'";
     foreach ($rsLastReport as $risultatoLastReport){
         $lastReport = $risultatoLastReport['used'];
         $lastReportDate = $risultatoLastReport['fullDate'];
+        $userLastReport= $risultatoLastReport['user'];
+        $sqlVerified = "SELECT isVerified FROM User WHERE id='$userLastReport'";
+        $rsVerified = $db->execute($sqlVerified);
+        foreach ($rsVerified as $risultatoVerified){
+            $verified=$risultatoVerified['isVerified'];
+        }
     }
 ?>
 
@@ -140,7 +146,7 @@ foreach ($rs as $risultato){
     <br>
     <div class="col">
         <div class="col-4"><span class="h1"><?php echo $risultato['name']; ?></div><br>
-        <div class="col-5"><span class="h5">Posti attualmente occupati: </span><span class="h5">    <?php echo $lastReport ?></span><span class="font-weight-normal"> ore:  <?php echo substr($lastReportDate, 11, 5) ?> del: <?php echo substr($lastReportDate, 8, 2)?>/<?php echo substr($lastReportDate, 5, 2)?>/<?php echo substr($lastReportDate, 2, 2)?></span></div><br>
+        <div class="col-5"><span class="h5">Posti attualmente occupati: </span><span class="h5">    <?php echo $lastReport ?></span><span class="font-weight-normal"> ore:  <?php echo substr($lastReportDate, 11, 5) ?> del: <?php echo substr($lastReportDate, 8, 2)?>/<?php echo substr($lastReportDate, 5, 2)?>/<?php echo substr($lastReportDate, 2, 2)?> </span><?php if ($verified==1){?><i class="bi bi-shield-check"></i><?php }?></div><br>
         <i class="bi bi-clock"></i><span class="font-weight-normal">  Orari: <?php echo $risultato['timetables'];?></span><br>
         <i class="bi bi-geo-alt"></i><span class="font-weight-normal">  <?php echo $risultato['address']; echo ", "; echo $risultato['city']; ?></span><br><br>
         <p class="font-weight-normal">Posti a sedere totali: <b><?php echo $risultato['seats']; ?></b></p>
