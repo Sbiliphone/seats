@@ -23,7 +23,7 @@ if ($_SESSION['authorized']) {
 
      if($password1==$password2){
 
-        $sql="INSERT INTO User (username, password, isAdmin, email, name, lastname) VALUES ('$username', '$password2', '$role', '$email', '$firstname', '$lastname')";
+        $sql="INSERT INTO User (username, password, isAdmin, email, name, lastname, isVerified) VALUES ('$username', '$password2', '$role', '$email', '$firstname', '$lastname', 0)";
         $rs = $db->execute($sql);
      }else{
 
