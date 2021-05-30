@@ -1,6 +1,4 @@
 <?php
-
-
     global $db;
      $username=$_REQUEST['username'];
      $password1=md5($_REQUEST['password1']);
@@ -26,10 +24,6 @@ if ($_SESSION['authorized']) {
         $sql="INSERT INTO User (username, password, isAdmin, email, name, lastname, isVerified) VALUES ('$username', '$password2', '$role', '$email', '$firstname', '$lastname', 0)";
         $rs = $db->execute($sql);
      }else{
-
-
-         // ALLERT PER PASWORD ERRATA
-
 
          header('Location:index.php?action=new-user');
      }

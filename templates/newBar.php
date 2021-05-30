@@ -38,7 +38,7 @@ require('../templates/menu.php');
 </head>
 
 <div style="position: relative; min-height: 100vh;">
-<div class="container paddingFooter">
+<div class="container paddingFooter"><br>
     <h3>Aggiungi nuovo bar</h3>
 
     <form name="user" action="index.php?action=save-bar" method="post">

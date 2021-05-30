@@ -1,7 +1,5 @@
 <?php
 $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : 'homepage';
-//echo substr($action, 0, 3);
-//echo substr($action, 0, 11);
 
 switch ($action){
     case 'homepage':
@@ -85,7 +83,6 @@ switch ($action){
         $bar = substr($action, 3, strlen($action));
         bar($bar);
         break;
-
 
 }
 

@@ -138,7 +138,6 @@ WHERE R1.bar='$bar'";
 <?php
 foreach ($rs as $risultato){
     $_SESSION['bar']=$risultato['name'];
-    //https://www.chartjs.org/docs/latest/
 ?>
 <body onload="graphic(<?php echo $Monday; ?>, <?php echo $Tuesday; ?>, <?php echo $Wednesday; ?>, <?php echo $Thursday; ?>, <?php echo $Friday; ?>, <?php echo $Saturday; ?>, <?php echo $Sunday; ?>, <?php echo $MondayS; ?>, <?php echo $TuesdayS; ?>, <?php echo $WednesdayS; ?>, <?php echo $ThursdayS; ?>, <?php echo $FridayS; ?>, <?php echo $SaturdayS; ?>, <?php echo $SundayS; ?>)">
 <div style="position: relative; min-height: 100vh;">

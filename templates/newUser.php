@@ -8,7 +8,7 @@ require('../templates/menu.php');
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><br>
 
     <title>New User</title>
 

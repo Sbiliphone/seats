@@ -7,7 +7,6 @@ require('../templates/menu.php');
     <div style="position: relative; min-height: 100vh;">
     <div class="container paddingFooter">
         <form method="post" action="index.php?action=set-password">
-            <!-- TODO: add names in inputs -->
             <h3>Cambia password</h3>
             <div class="mb-3">
                 <label for="newPassword_first" class="form-label">Nuova password</label>
