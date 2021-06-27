@@ -1,7 +1,5 @@
 <?php
 require('../templates/header.php');
-?>
-<?php
 require('../templates/menu.php');
 ?>
 
@@ -107,7 +105,3 @@ require('../templates/menu.php');
         </table>
     </div>
 </div>
-
-<?php
-require('../templates/footer.php');
-?>
